@@ -10,3 +10,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+bootstrap/compiled.php
+app/storage/
+public_html/storage
+public_html/hot
+/.vagrant
+*.meta.*
+_ide_*
