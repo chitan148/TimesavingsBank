@@ -61,6 +61,15 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            @foreach(\App\UserDetail::GENDERS as $key => $value)
+                                <div class="form-check form-check-inline">    
+                                    <input type="radio" class="form-check-input" id="male" name="gender" value="{{$key}}">  
+                                    <label for="male" class="form-check-label">{{$value}}</label>   
+                                </div>
+                            @endforeach
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
