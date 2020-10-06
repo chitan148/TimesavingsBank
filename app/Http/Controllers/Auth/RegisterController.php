@@ -79,4 +79,10 @@ class RegisterController extends Controller
 
         return $user;
     }
+    public function result(){
+        $user_details = Auth::user()->user_details()->get();
+        $gender = $user_details->gender;
+
+        return view('auth/register_result', ['gender' => $gender,]);
+    }
 }
