@@ -9,6 +9,7 @@ use App\UserDetail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -79,10 +80,11 @@ class RegisterController extends Controller
 
         return $user;
     }
-    public function result(){
-        $user_details = Auth::user()->user_details()->get();
+    /*public function result(){
+        $user_details = Auth::user()->userDetails()->get();
         $gender = $user_details->gender;
 
         return view('auth/register_result', ['gender' => $gender,]);
     }
+    */
 }
