@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -31,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME; 98行目と処理かぶるのでコメントアウト
 
     /**
      * Create a new controller instance.
@@ -66,19 +67,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        //トランザクションを貼る
+        return DB::transaction(function () use($data) { //use($data) 変数$dataを関数の中で使えるようにする
+            //usersテーブルへのinsert
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+            //user_detailテーブルへのinsert
+            $detail = new UserDetail;
+            $detail->user_id = $user->id;
+            $detail->gender = $data['gender'];
+            $detail->saving_time = 0;
+            $detail->save();
 
-        $detail = new UserDetail;
-        $detail->user_id = $user->id;
-        $detail->gender = $data['gender'];
-        $detail->saving_time = 0;
-        $detail->save();
-
-        return $user;
+            return $user;
+        }); 
     }
     /*public function result(){
         $user_details = Auth::user()->userDetails()->get();
