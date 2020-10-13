@@ -8,9 +8,9 @@ use App\Http\Requests\CreateMission;//フォームリクエスト
 class MissionController extends Controller
 {
     public function showCreateMissionForm(){
-        return view('mission/create');
+        return view('missions/create');
     }
-    
+
     public function create(CreateMission $request){
         
         //$this->validate($request, Mission::$rules);
