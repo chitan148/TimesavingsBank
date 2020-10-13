@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/register/result', 'auth/RegistorController@result')->name('register.result');
+Route::get('users/{users}/mission', 'MissionController@showCreateMissionForm')->name('mission');
+Route::post('users/{users}/mission/create', 'MissionController@create');
