@@ -18,6 +18,7 @@ class CreateUserDetailsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('gender')->unsigned();
             $table->bigInteger('saving_time')->unsigned();
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             
         });
