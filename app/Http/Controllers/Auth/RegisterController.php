@@ -71,13 +71,14 @@ class RegisterController extends Controller
         return DB::transaction(function () use($data) { //use($data) 変数$dataを関数の中で使えるようにする
             //usersテーブルへのinsert
             $user = User::create([
-                'name' => $data['name'],
+                //'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
             //user_detailテーブルへのinsert
             $detail = new UserDetail;
             $detail->user_id = $user->id;
+            $detail->name = $data['name'];
             $detail->gender = $data['gender'];
             $detail->saving_time = 0;
             $detail->save();
