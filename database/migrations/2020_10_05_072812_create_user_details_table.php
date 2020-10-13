@@ -16,8 +16,10 @@ class CreateUserDetailsTable extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
+            $table->string('name');//usersテーブルから移動
             $table->bigInteger('gender')->unsigned();
             $table->bigInteger('saving_time')->unsigned();
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             
         });
