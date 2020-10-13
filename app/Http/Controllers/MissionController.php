@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateMission;//フォームリクエスト
 
 class MissionController extends Controller
 {
-    public function create(Request $request){
+    public function create(CreateMission $request){
         
-        $this->validate($request, Mission::$rules);
+        //$this->validate($request, Mission::$rules);
         
         $mission = new Mission;
         $mission->name = $request->name;
