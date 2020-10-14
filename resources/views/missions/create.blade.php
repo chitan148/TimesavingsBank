@@ -5,6 +5,7 @@
     </head>
     <body>
         <form method="POST" action="{{ route('missions.create') }}">
+            @csrf
             <h1>ミッションを作ります</h1>
             <label for="name">ミッション名</label><br>
             <input type="text" id="name" name="name" >
