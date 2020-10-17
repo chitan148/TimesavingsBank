@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\UserDetail;
 use App\Mission;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class MissionController extends Controller
         $mission->name = $request->name;
         $mission->time = $request->time;
         $mission->difficulty = $request->difficulty;
-        $mission->image = $request->image;          
+        $mission->image = $request->image;      
         $user_detail->missions()->save($mission);
         
         return redirect()->route('deposit');  
