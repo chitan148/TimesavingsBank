@@ -4,7 +4,7 @@
         <title>ミッション作成お試し画面</title>
     </head>
     <body>
-        <form method="POST" action="{{ route('missions.create') }}">
+        <form method="POST" action="{{ route('missions.create', ['user_detail' => $user_detail_id ])}}">
             @csrf
             <h1>ミッションを作ります</h1>
             <label for="name">ミッション名</label><br>
