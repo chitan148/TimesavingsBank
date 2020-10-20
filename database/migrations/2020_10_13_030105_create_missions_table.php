@@ -19,7 +19,7 @@ class CreateMissionsTable extends Migration
             $table->string('name', 30);
             $table->bigInteger('time')->unsigned();
             $table->bigInteger('difficulty')->unsigned();
-            $table->bigInteger('image')->unsigned();
+            $table->bigInteger('group')->unsigned();
             $table->timestamps();
             $table->foreign('user_detail_id')->references('id')->on('user_details');
         });
