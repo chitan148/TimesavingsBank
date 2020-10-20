@@ -14,6 +14,12 @@ class Mission extends Model
         'difficulty' => 'required|max: 5',
     ];*/
     
-    const IMAGE = [1 => '画像のURL', 2 => '画像のURL'];
-
+    const GROUP = [
+        1 => '習慣',
+        2 => '健康'
+    ];
+    const IMAGE = [
+        1 => 'public/image/habits.png',
+        2 => 'public/image/health.png'   
+    ];
 }
