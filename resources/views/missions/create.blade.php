@@ -10,14 +10,14 @@
             <label for="name">ミッション名</label><br>
             <input type="text" id="name" name="name" >
             <br>
-            <label for="name">もらえる時間</label><br>
+            <label for="time">もらえる時間</label><br>
             <input type="number" id="time" name="time">
             <br>
-            <label for="name">むずかしさ</label><br>
+            <label for="difficulty">むずかしさ</label><br>
             <input type="number" id="difficulty" name="difficulty">
             <br>
             <span>グループ</span><br>
-            <select name="image" id="image" class="form-control">
+            <select name="group" id="group" class="form-control">
                 @foreach(\App\Mission::GROUP as $key => $value)
                     <option value="{{ $key }}">
                         {{ $value }}
