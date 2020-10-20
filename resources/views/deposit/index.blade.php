@@ -14,5 +14,26 @@
             <p>{{ $mission->group }}</p>
         @endforeach
         <p>{{$count}}</p>
+        <form method="post" action="#">
+            <div>
+            @foreach ($missions as $mission): ?>
+                <div>
+                  <img src="{{ $mission->group_image}}">
+                  <h3>
+                    {{ $mission->name }}
+                  </h3>
+                  <p>{{ $mission->difficulty }}</p>
+                  <p>{{ $mission->time }}分</p>
+                  <input type="number" name="{{ $mission->id }}">
+                  <span>回</span>
+                </div>
+            @endforeach
+            </div>
+            <input type="submit" value="計算する">
+          </form>
+
+
+
+
     </body>   
 </html>
