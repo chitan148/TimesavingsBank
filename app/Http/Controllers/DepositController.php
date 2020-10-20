@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\UserDetail;
+use App\Mission;
 use Illuminate\Http\Request;
 
 class DepositController extends Controller
@@ -13,7 +16,7 @@ class DepositController extends Controller
         $count = $missions->count();         
    
         //viewに渡します
-        return view('users/{user_detail}/deposit', [
+        return view('deposit.index', [
             'missions' => $missions,
             'count' => $count
         ]);
