@@ -18,9 +18,9 @@
             <br>
             <span>グループ</span><br>
             <select name="group" id="group" class="form-control">
-                @foreach(\App\Mission::GROUP as $key => $value)
+                @foreach(\App\Mission::GROUPS as $key => $value)
                     <option value="{{ $key }}">
-                        {{ $value }}
+                        {{ $value['title'] }}
                     </option>
                 @endforeach
             </select>
