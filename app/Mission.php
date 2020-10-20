@@ -14,8 +14,8 @@ class Mission extends Model
         'difficulty' => 'required|max: 5',
     ];*/
     const GROUP = [
-        1 => ['title' => '習慣', 'image' => 'public/image/habits.png'],
-        2 => ['title' => '健康', 'image' => 'public/image/health.png']
+        1 => ['title' => '習慣', 'image' => 'habits.png'],
+        2 => ['title' => '健康', 'image' => 'health.png']
     ];
 
     /*const GROUP = [
