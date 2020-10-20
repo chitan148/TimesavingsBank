@@ -17,7 +17,7 @@
                   </h3>
                   <p>{{ $mission->difficulty }}</p>
                   <p>{{ $mission->time }}分</p>
-                  <input type="number" name="{{ $mission->id }}">
+                  <input type="number" placeholder="0" name="{{ $mission->id }}">
                   <span>回</span>
                 </div>
             @endforeach
