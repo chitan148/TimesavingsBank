@@ -11,7 +11,7 @@
             <div>
             @foreach ($missions as $mission)
                 <div>
-                  <img src="{{ $mission->group_image}}">
+                  <img src="{{ asset('image/' . $mission->group_image) }}"　width="400" height="320">
                   <h3>
                     {{ $mission->name }}
                   </h3>
