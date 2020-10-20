@@ -13,7 +13,7 @@ class Mission extends Model
         'time' => 'required|max: 1000',
         'difficulty' => 'required|max: 5',
     ];*/
-    const GROUPS = [
+    const GROUP = [
         1 => ['title' => '習慣', 'image' => 'public/image/habits.png'],
         2 => ['title' => '健康', 'image' => 'public/image/health.png']
     ];
@@ -28,17 +28,17 @@ class Mission extends Model
         2 => 'public/image/health.png'   
     ];
     */
-    public function getGroupsTitleAttribute(){
-        //GROUPS配列から状態値をキーに文字列表現を探して返している。
-        $groups = $this->attributes['groups'];
+    public function getGroupTitleAttribute(){
+        //GROUP配列から状態値をキーに文字列表現を探して返している。
+        $group = $this->attributes['group'];
         //自クラスのメソッドにアクセス　keyがtitleのvalueをもらう
-        return self::GROUPS[$groups]['title'];
+        return self::GROUP[$group]['title'];
     }
     
-    public function getGroupsImageAttribute(){
+    public function getGroupImageAttribute(){
         //状態値
-        $groups = $this->attributes['groups'];
+        $group = $this->attributes['group'];
         //keyがimageのvalueをもらう
-        return self::GROUPS[$groups]['image'];
+        return self::GROUP[$group]['image'];
     }
 }

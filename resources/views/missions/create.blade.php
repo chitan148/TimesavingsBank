@@ -18,7 +18,7 @@
             <br>
             <span>グループ</span><br>
             <select name="group" id="group" class="form-control">
-                @foreach(\App\Mission::GROUPS as $key => $value)
+                @foreach(\App\Mission::GROUP as $key => $value)
                     <option value="{{ $key }}">
                         {{ $value['title'] }}
                     </option>
