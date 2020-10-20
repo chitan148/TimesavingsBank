@@ -7,16 +7,9 @@
     <body>
         <h1>クリアミッション入力</h1>
         <h3>ミッション{{$count}}件</h3>
-        @foreach($missions as $mission)
-            <p>{{ $mission->name }}</p>
-            <p>{{ $mission->time }}</p>
-            <p>{{ $mission->difficulty }}</p>
-            <p>{{ $mission->group }}</p>
-        @endforeach
-        <p>{{$count}}</p>
         <form method="post" action="#">
             <div>
-            @foreach ($missions as $mission): ?>
+            @foreach ($missions as $mission)
                 <div>
                   <img src="{{ $mission->group_image}}">
                   <h3>
@@ -31,9 +24,5 @@
             </div>
             <input type="submit" value="計算する">
           </form>
-
-
-
-
     </body>   
 </html>
