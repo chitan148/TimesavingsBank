@@ -18,7 +18,14 @@ class DepositController extends Controller
         //viewに渡します
         return view('deposit.index', [
             'missions' => $missions,
-            'count' => $count
+            'count' => $count,
+            'user_detail_id' => $user_detail->id
         ]);
    }
+   public function confirm(UserDetail $user_detail, Request $request){
+        //viewに渡します
+        return view('deposit.result', [
+            'parameter' => $request,
+        ]);                
+    }
 }
