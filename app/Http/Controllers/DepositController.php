@@ -14,7 +14,7 @@ class DepositController extends Controller
         $missions = $user_detail->missions()->get();
         //missionの数を数える　
         $count = $missions->count();         
-   
+
         //viewに渡します
         return view('deposit.index', [
             'missions' => $missions,
@@ -24,7 +24,7 @@ class DepositController extends Controller
    }
    public function confirm(UserDetail $user_detail, Request $request){
         //viewに渡します
-        return view('deposit.result', [
+        return view('deposit.confirm', [
             'parameter' => $request,
         ]);                
     }
