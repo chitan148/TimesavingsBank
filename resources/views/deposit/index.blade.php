@@ -7,7 +7,7 @@
     <body>
         <h1>クリアミッション入力</h1>
         <h3>ミッション{{$count}}件</h3>
-        <!--"{{ route('users/{user_detail}/deposit/confirm', ['user_detail' => $user_detail_id])}}"-->
+        {{-- "{{ route('users/{user_detail}/deposit/confirm', ['user_detail' => $user_detail_id])}}" --}}
         <form method="post" action="{{ route('deposit.confirm', ['user_detail' => $user_detail_id])}}"> 
           <div>
             @foreach ($missions as $mission)
