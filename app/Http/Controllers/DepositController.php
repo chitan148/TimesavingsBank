@@ -26,10 +26,15 @@ class DepositController extends Controller
    public function confirm(UserDetail $user_detail, Request $request){
         //'mission_id'のキーがついたものだけ取り出す
         $mission_ids = $request->input('mission_id');
-        //各ミッションの為の配列
+        //各ミッション毎のデータをパックする配列
         $mission = array();
         //表示の際にforeachを使うための配列
         $missions = array();
+        
+        //小計と総計の為の変数
+        $subtotal = 0;
+        $gland_total = 0;
+        
         $var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
         foreach($mission_ids as $mission_id => $deposit_count){
@@ -38,18 +43,26 @@ class DepositController extends Controller
             $time = $mission_info->time;
             $name = $mission_info->name;
             
+            //小計　総計　を計算
+            $subtotal = $time * $deposit_count;
+            $gland_total += $subtotal;
+            
             //ID 名前　回数　報酬時間　を、名前を付けて配列に入れる
             $mission['mission_id'] = $mission_id;
             $mission['name'] = $name;
             $mission['deposit_count'] = $deposit_count;
             $mission['time'] = $time;
+            $mission['subtotal'] = $subtotal;
             $mission['var'] = $var;
             //ループ用配列に入れる
             array_push($missions, $mission);
+
+            //データパックの配列と小計を初期化
             $mission = array();
+            $subtotal = 0;
         }
-        
+
         $dump = var_dump($missions);
-        return view('deposit.confirm', ['dump' => $dump, 'missions' => $missions]);
+        return view('deposit.confirm', ['dump' => $dump, 'missions' => $missions, 'gland_total' => $gland_total]);
     }
 }
