@@ -24,9 +24,11 @@ class DepositController extends Controller
         ]);
    }
    public function confirm(UserDetail $user_detail, Request $request){
-        //viewに渡します
+        //'mission_id'のキーがついたものだけ取り出す
         $mission_ids = $request->input('mission_id');
+        //各ミッションの為の配列
         $mission = array();
+        //表示の際にforeachを使うための配列
         $missions = array();
         $var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
@@ -34,18 +36,20 @@ class DepositController extends Controller
             //ミッションの情報をモデル(DB)からもらう
             $mission_info = Mission::find($mission_id);
             $time = $mission_info->time;
+            $name = $mission_info->name;
             
-            $mission = array();
+            //ID 名前　回数　報酬時間　を、名前を付けて配列に入れる
             $mission['mission_id'] = $mission_id;
+            $mission['name'] = $name;
             $mission['deposit_count'] = $deposit_count;
             $mission['time'] = $time;
             $mission['var'] = $var;
-
+            //ループ用配列に入れる
             array_push($missions, $mission);
             $mission = array();
         }
         
         $dump = var_dump($missions);
-        return view('deposit.confirm', ['dump' => $dump]);
+        return view('deposit.confirm', ['dump' => $dump, 'missions' => $missions]);
     }
 }
