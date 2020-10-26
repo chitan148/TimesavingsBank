@@ -6,6 +6,7 @@ use App\User;
 use App\UserDetail;
 use App\Mission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DepositController extends Controller
 {
@@ -24,8 +25,27 @@ class DepositController extends Controller
    }
    public function confirm(UserDetail $user_detail, Request $request){
         //viewに渡します
-        return view('deposit.confirm', [
-            'parameter' => $request,
-        ]);                
+        $mission_ids = $request->input('mission_id');
+        $mission = array();
+        $missions = array();
+        $var = 12;
+        //$deposit_countは、ユーザーが入力したミッションの回数
+        foreach($mission_ids as $mission_id => $deposit_count){
+            //ミッションの情報をモデル(DB)からもらう
+            $mission_info = Mission::find($mission_id);
+            $time = $mission_info->time;
+            
+            $mission = array();
+            $mission['mission_id'] = $mission_id;
+            $mission['deposit_count'] = $deposit_count;
+            $mission['time'] = $time;
+            $mission['var'] = $var;
+
+            array_push($missions, $mission);
+            $mission = array();
+        }
+        
+        $dump = var_dump($missions);
+        return view('deposit.confirm', ['dump' => $dump]);
     }
 }
