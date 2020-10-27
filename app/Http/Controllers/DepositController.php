@@ -62,11 +62,19 @@ class DepositController extends Controller
             $subtotal = 0;
         }
         //$dump = var_dump($missions);
+        //sessionに総計とデータパック配列を格納
+        session(['gland_total' => $gland_total]);
+        session(['missions' => $missions]);
+        //viewに総計・データパック配列・formタグのためのユーザー詳細IDを渡す
         return view('deposit.confirm', ['missions' => $missions, 'gland_total' => $gland_total, 'user_detail_id' => $user_detail->id]);
     }
-    //とりあえず名前だけ出してみる
+    
     public function result(UserDetail $user_detail, Request $request){
+        //とりあえず名前
         $user_name = $user_detail->name;
-        return view('deposit.result', [ 'user_name' => $user_name ]);
+        //セッションから総計とデータパック配列を取得
+        $gland_total = session('gland_total');
+        $missions = session('missions');
+        return view('deposit.result', [ 'user_name' => $user_name, 'gland_total' => $gland_total ]);
     }
 }
