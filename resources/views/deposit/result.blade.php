@@ -6,5 +6,6 @@
     </head>
     <body>
         <p>{{ $user_name }}</p>
+        <p>{{ $gland_total }}</p>
     </body>
 </html>
