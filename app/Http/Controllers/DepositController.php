@@ -62,6 +62,11 @@ class DepositController extends Controller
             $subtotal = 0;
         }
         //$dump = var_dump($missions);
-        return view('deposit.confirm', ['missions' => $missions, 'gland_total' => $gland_total]);
+        return view('deposit.confirm', ['missions' => $missions, 'gland_total' => $gland_total, 'user_detail_id' => $user_detail->id]);
+    }
+    //とりあえず名前だけ出してみる
+    public function result(UserDetail $user_detail, Request $request){
+        $user_name = $user_detail->name;
+        return view('deposit.result', [ 'user_name' => $user_name ]);
     }
 }
