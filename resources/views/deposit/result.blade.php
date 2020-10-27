@@ -7,5 +7,7 @@
     <body>
         <p>{{ $user_name }}</p>
         <p>{{ $gland_total }}</p>
+        <p>{{ $saving_time_old }}</p>
+        <p>{{ $saving_time }}</p>
     </body>
 </html>
