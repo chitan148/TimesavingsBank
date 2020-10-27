@@ -61,8 +61,7 @@ class DepositController extends Controller
             $mission = array();
             $subtotal = 0;
         }
-
-        $dump = var_dump($missions);
-        return view('deposit.confirm', ['dump' => $dump, 'missions' => $missions, 'gland_total' => $gland_total]);
+        //$dump = var_dump($missions);
+        return view('deposit.confirm', ['missions' => $missions, 'gland_total' => $gland_total]);
     }
 }
