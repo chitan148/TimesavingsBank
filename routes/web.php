@@ -25,4 +25,5 @@ Route::get('users/{user_detail}/missions/create', 'MissionController@showCreateM
 Route::post('users/{user_detail}/missions/create', 'MissionController@create')->name('missions.create');
 Route::get('users/{user_detail}/deposit/index', 'DepositController@index');
 Route::post('users/{user_detail}/deposit/confirm', 'DepositController@confirm')->name('deposit.confirm');
+Route::post('users/{user_detail}/deposit/result', 'DepositController@result')->name('deposit.result');
 //Route::post('users/{user_detail}/deposit/confirm', 'DepositController@confirm');
