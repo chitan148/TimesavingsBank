@@ -75,6 +75,19 @@ class DepositController extends Controller
         //セッションから総計とデータパック配列を取得
         $gland_total = session('gland_total');
         $missions = session('missions');
-        return view('deposit.result', [ 'user_name' => $user_name, 'gland_total' => $gland_total ]);
+        //最新の所有時間情報を作る。今まで所有していた時間　と　総計　を　足す。
+        $saving_time = $user_detail->saving_time + $gland_total;
+        
+        //trade_detailsの処理
+        //foreach($missions as $mission){
+        //$mission_id = $mission['mission_id'];
+        //}
+        
+        return view('deposit.result', [
+            'user_name' => $user_name,
+            'gland_total' => $gland_total,
+            'saving_time_old' => $user_detail->saving_time,
+            'saving_time' => $saving_time,
+            ]);
     }
 }
