@@ -13,4 +13,7 @@ class UserDetail extends Model
     public function missions(){
         return $this->hasMany('App\Mission');
     }
+    public function trades(){
+        return $this->hasMany('App\Trade');
+    }
 }
