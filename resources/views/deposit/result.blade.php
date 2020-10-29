@@ -9,5 +9,6 @@
         <p>{{ $gland_total }}</p>
         <p>{{ $saving_time_old }}</p>
         <p>{{ $saving_time }}</p>
+        <p>{{ $comment }}</p>
     </body>
 </html>
