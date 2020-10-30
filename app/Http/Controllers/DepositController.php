@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\UserDetail;
 use App\Mission;
+use App\Trade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -81,6 +82,19 @@ class DepositController extends Controller
         
         //コメントもとってきてみる
         $comment = $request->input('comment');
+
+        //計算後の所有時間を記録　user_detailsテーブルの更新処理
+        $user_detail->saving_time = $saving_time;
+        $user_detail->save();
+        
+        //取引の記録をつける　tradesテーブルの新規作成処理
+        //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
+        $trade = new Trade;
+        $trade->trading_time = $gland_total;
+        $trade->time_save_now = $saving_time;
+        $trade->comment = $comment;
+        //$user_detailsテーブルと紐づける
+        $user_detail->trades()->save($trade);
         
         //trade_detailsの処理
         //foreach($missions as $mission){
