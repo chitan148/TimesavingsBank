@@ -41,4 +41,7 @@ class Mission extends Model
         //keyがimageのvalueをもらう
         return self::GROUP[$group]['image'];
     }
+    public function tradeDetails(){
+        return $this->hasMany('App\TradeDetails');
+    }
 }
