@@ -25,6 +25,6 @@ class MissionController extends Controller
         $mission->group = $request->group;      
         $user_detail->missions()->save($mission);
         
-        return redirect()->route('deposit.index');  
+        return redirect()->route('deposit.index', ['user_detail_id' => $user_detail->id]);  
     }
 }

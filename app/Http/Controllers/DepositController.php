@@ -6,6 +6,7 @@ use App\User;
 use App\UserDetail;
 use App\Mission;
 use App\Trade;
+use App\TradeDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,6 +40,11 @@ class DepositController extends Controller
         $var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
         foreach($mission_ids as $mission_id => $deposit_count){
+            if(ctype_digit($deposit_count) === false){
+                //$deposit_Count = 0;
+                $gland_total += 0;
+            }
+            else {
             //ミッションの情報をモデル(DB)からもらう
             $mission_info = Mission::find($mission_id);
             $time = $mission_info->time;
@@ -61,6 +67,7 @@ class DepositController extends Controller
             //データパックの配列と小計を初期化
             $mission = array();
             $subtotal = 0;
+            }
         }
         //$dump = var_dump($missions);
         //sessionに総計とデータパック配列を格納
@@ -97,16 +104,23 @@ class DepositController extends Controller
         $user_detail->trades()->save($trade);
         
         //trade_detailsの処理
-        //foreach($missions as $mission){
-        //$mission_id = $mission['mission_id'];
-        //}
+        foreach($missions as $mission){
+        //    $detail = new TradeDetail;
+        //    $detail->mission_id = $mission['mission_id'];
+              $test = $mission['deposit_count'];
+              $test = var_dump($test);
+        //    $detail->mission_count = $mission['deposit_count'];
+        //    $detail->trade_id = $trade->id;
+        //    $detail->save();    
+        }
         
         return view('deposit.result', [
             'user_name' => $user_name,
             'gland_total' => $gland_total,
             'saving_time_old' => $user_detail->saving_time,
             'saving_time' => $saving_time,
-            'comment' => $comment
+            'comment' => $comment,
+            'test' => $test
         ]);
     }
 }
