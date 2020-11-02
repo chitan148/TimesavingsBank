@@ -40,33 +40,29 @@ class DepositController extends Controller
         $var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
         foreach($mission_ids as $mission_id => $deposit_count){
-            if(ctype_digit($deposit_count) === false){
-                //$deposit_Count = 0;
-                $gland_total += 0;
-            }
-            else {
-            //ミッションの情報をモデル(DB)からもらう
-            $mission_info = Mission::find($mission_id);
-            $time = $mission_info->time;
-            $name = $mission_info->name;
-            
-            //小計　総計　を計算
-            $subtotal = $time * $deposit_count;
-            $gland_total += $subtotal;
-            
-            //ID 名前　回数　報酬時間　を、名前を付けて配列に入れる
-            $mission['mission_id'] = $mission_id;
-            $mission['name'] = $name;
-            $mission['deposit_count'] = $deposit_count;
-            $mission['time'] = $time;
-            $mission['subtotal'] = $subtotal;
-            $mission['var'] = $var;
-            //ループ用配列に入れる
-            array_push($missions, $mission);
+            if(ctype_digit($deposit_count) === true){
+                //ミッションの情報をモデル(DB)からもらう
+                $mission_info = Mission::find($mission_id);
+                $time = $mission_info->time;
+                $name = $mission_info->name;
+                
+                //小計　総計　を計算
+                $subtotal = $time * $deposit_count;
+                $gland_total += $subtotal;
+                
+                //ID 名前　回数　報酬時間　を、名前を付けて配列に入れる
+                $mission['mission_id'] = $mission_id;
+                $mission['name'] = $name;
+                $mission['deposit_count'] = $deposit_count;
+                $mission['time'] = $time;
+                $mission['subtotal'] = $subtotal;
+                $mission['var'] = $var;
+                //ループ用配列に入れる
+                array_push($missions, $mission);
 
-            //データパックの配列と小計を初期化
-            $mission = array();
-            $subtotal = 0;
+                //データパックの配列と小計を初期化
+                $mission = array();
+                $subtotal = 0;
             }
         }
         //$dump = var_dump($missions);
@@ -105,13 +101,13 @@ class DepositController extends Controller
         
         //trade_detailsの処理
         foreach($missions as $mission){
-        //    $detail = new TradeDetail;
-        //    $detail->mission_id = $mission['mission_id'];
-              $test = $mission['deposit_count'];
-              $test = var_dump($test);
-        //    $detail->mission_count = $mission['deposit_count'];
-        //    $detail->trade_id = $trade->id;
-        //    $detail->save();    
+        $detail = new TradeDetail;
+        $detail->mission_id = $mission['mission_id'];
+        $test = $mission['deposit_count'];
+        $test = var_dump($test);
+        $detail->mission_count = $mission['deposit_count'];
+        $detail->trade_id = $trade->id;
+        $detail->save();    
         }
         
         return view('deposit.result', [
