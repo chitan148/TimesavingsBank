@@ -8,6 +8,7 @@ use App\Mission;
 use App\Trade;
 use App\TradeDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class DepositController extends Controller
@@ -80,43 +81,54 @@ class DepositController extends Controller
         $gland_total = session('gland_total');
         $missions = session('missions');
         
-        //最新の所有時間情報を作る。今まで所有していた時間　と　総計　を　足す。
-        $saving_time = $user_detail->saving_time + $gland_total;
+        //最新の所有時間情報を作る。
+        //$saving_old_timeは今まで所有していた時間。
+        $saving_old_time = $user_detail->saving_time;
+        //総計　を足し算して　代入（更新）
+        $saving_time = $saving_old_time + $gland_total;
         
         //コメントもとってきてみる
         $comment = $request->input('comment');
 
-        //計算後の所有時間を記録　user_detailsテーブルの更新処理
-        $user_detail->saving_time = $saving_time;
-        $user_detail->save();
+        //トランザクション開始
+        DB::transaction(function () use(
+            $user_detail,
+            $saving_time,
+            $gland_total,
+            $comment) 
+            {
+                //計算後の所有時間を記録　user_detailsテーブルの更新処理
+                $user_detail->saving_time = $saving_time;
+                $user_detail->save();
         
-        //取引の記録をつける　tradesテーブルの新規作成処理
-        //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
-        $trade = new Trade;
-        $trade->trading_time = $gland_total;
-        $trade->time_save_now = $saving_time;
-        $trade->comment = $comment;
-        //$user_detailsテーブルと紐づける
-        $user_detail->trades()->save($trade);
-        
+                //取引の記録をつける　tradesテーブルの新規作成処理
+                //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
+                $trade = new Trade;
+                $trade->trading_time = $gland_total;
+                $trade->time_save_now = $saving_time;
+                $trade->comment = $comment;
+                //$user_detailsテーブルと紐づける
+                $user_detail->trades()->save($trade);
+            });
+
         //trade_detailsの処理
-        foreach($missions as $mission){
-        $detail = new TradeDetail;
-        $detail->mission_id = $mission['mission_id'];
-        $test = $mission['deposit_count'];
-        $test = var_dump($test);
-        $detail->mission_count = $mission['deposit_count'];
-        $detail->trade_id = $trade->id;
-        $detail->save();    
-        }
+        //foreach($missions as $mission){
+        //    $detail = new TradeDetail;
+        //    $detail->mission_id = $mission['mission_id'];
+            //$test = $mission['deposit_count'];
+            //$test = var_dump($test);
+        //    $detail->mission_count = $mission['deposit_count'];
+            //$detail->trade_id = $trade->id;
+        //    $detail->save();    
+        //}
         
         return view('deposit.result', [
             'user_name' => $user_name,
             'gland_total' => $gland_total,
-            'saving_time_old' => $user_detail->saving_time,
+            'saving_time_old' => $saving_old_time,
             'saving_time' => $saving_time,
             'comment' => $comment,
-            'test' => $test
+        //    'test' => $test
         ]);
     }
 }
