@@ -38,7 +38,7 @@ class DepositController extends Controller
         $subtotal = 0;
         $gland_total = 0;
         
-        $var = 12;
+        //$var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
         foreach($mission_ids as $mission_id => $deposit_count){
             if(ctype_digit($deposit_count) === true){
@@ -57,7 +57,7 @@ class DepositController extends Controller
                 $mission['deposit_count'] = $deposit_count;
                 $mission['time'] = $time;
                 $mission['subtotal'] = $subtotal;
-                $mission['var'] = $var;
+                //$mission['var'] = $var;
                 //ループ用配列に入れる
                 array_push($missions, $mission);
 
