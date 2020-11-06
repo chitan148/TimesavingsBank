@@ -95,7 +95,8 @@ class DepositController extends Controller
             $user_detail,
             $saving_time,
             $gland_total,
-            $comment) 
+            $comment,
+            $missions) 
             {
                 //計算後の所有時間を記録　user_detailsテーブルの更新処理
                 $user_detail->saving_time = $saving_time;
@@ -109,18 +110,19 @@ class DepositController extends Controller
                 $trade->comment = $comment;
                 //$user_detailsテーブルと紐づける
                 $user_detail->trades()->save($trade);
-            });
 
-        //trade_detailsの処理
-        //foreach($missions as $mission){
-        //    $detail = new TradeDetail;
-        //    $detail->mission_id = $mission['mission_id'];
-            //$test = $mission['deposit_count'];
-            //$test = var_dump($test);
-        //    $detail->mission_count = $mission['deposit_count'];
-            //$detail->trade_id = $trade->id;
-        //    $detail->save();    
-        //}
+                //trade_detailsの処理
+                foreach($missions as $mission){
+                    $detail = new TradeDetail;
+                    $detail->mission_id = $mission['mission_id'];
+                    //$test = $mission['deposit_count'];
+                    //$test = var_dump($test);
+                    $detail->mission_count = $mission['deposit_count'];
+                    $detail->trade_id = $trade->id;
+                    $detail->save();    
+                }
+            }
+        );
         
         return view('deposit.result', [
             'user_name' => $user_name,
