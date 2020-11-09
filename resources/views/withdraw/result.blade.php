@@ -6,7 +6,9 @@
     </head>
     <body>
         <p>出刻結果</p>
-        <p>{{ $withdraw_time }}</p>
+        <p>出刻前の残高{{ $saving_old_time }}</p>
+        <p>出刻時間{{ $withdraw_time }}</p>
+        <p>出刻後の残高{{ $saving_time }}</p>
         <p>{{ $comment }}</p>
     </body>
 </html>
