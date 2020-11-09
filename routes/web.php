@@ -28,3 +28,4 @@ Route::post('users/{user_detail}/deposit/confirm', 'DepositController@confirm')-
 Route::post('users/{user_detail}/deposit/result', 'DepositController@result')->name('deposit.result');
 //Route::post('users/{user_detail}/deposit/confirm', 'DepositController@confirm');
 Route::get('users/{user_detail}/withdraw/index', 'WithdrawController@index')->name('withdraw.index');
+Route::get('users/{user_detail}/withdraw/confirm', 'WithdrawController@confirm')->name('withdraw.confirm');
