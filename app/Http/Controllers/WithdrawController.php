@@ -52,7 +52,7 @@ class WithdrawController extends Controller
         
                 //取引の記録をつける　tradesテーブルの新規作成処理
                 //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
-                //$trade = new Trade;
+                $trade = new Trade;
                 $trade->trading_time = $withdraw_time;
                 $trade->time_save_now = $saving_time;
                 $trade->comment = $comment;
