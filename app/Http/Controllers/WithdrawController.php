@@ -23,13 +23,16 @@ class WithdrawController extends Controller
             'user_detail_id' => $user_detail->id
         ]);
     }
-    
-    public function result(UserDetail $user_detail){
+
+    public function result(UserDetail $user_detail, Request $request){
         //セッションから出刻時間を取得
         $withdraw_time = session('withdraw_time');
+        //リクエストからコメントを取得
+        $comment = $request->input('comment');
         
         return view('withdraw/result', [
             'withdraw_time' => $withdraw_time,
+            'comment' => $comment,
             'user_detail_id' => $user_detail->id
         ]);
     }

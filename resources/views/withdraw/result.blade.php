@@ -7,5 +7,6 @@
     <body>
         <p>出刻結果</p>
         <p>{{ $withdraw_time }}</p>
+        <p>{{ $comment }}</p>
     </body>
 </html>
