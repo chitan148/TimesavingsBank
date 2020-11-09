@@ -9,6 +9,7 @@
         <p>{{ $withdraw_time }}分</p>
         <p>上記の時間を出刻致します</p>
         <form method="post" action= " {{ route('withdraw.result', ['user_detail' => $user_detail_id]) }}" >
+            @csrf
             <input type="submit" value="OK">
         </form>
     </body>
