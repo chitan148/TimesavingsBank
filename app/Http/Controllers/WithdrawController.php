@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\UserDetail;
+use App\Trade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class WithdrawController extends Controller
@@ -35,6 +38,28 @@ class WithdrawController extends Controller
         $saving_old_time = $user_detail->saving_time;
         //総計　を足し算して　代入（更新）
         $saving_time = $saving_old_time - $withdraw_time;
+
+        //トランザクション開始
+        DB::transaction(function () use(
+            $user_detail,
+            $saving_time,
+            $withdraw_time,
+            $comment) 
+            {
+                //計算後の所有時間を記録　user_detailsテーブルの更新処理
+                $user_detail->saving_time = $saving_time;
+                $user_detail->save();
+        
+                //取引の記録をつける　tradesテーブルの新規作成処理
+                //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
+                //$trade = new Trade;
+                $trade->trading_time = $withdraw_time;
+                $trade->time_save_now = $saving_time;
+                $trade->comment = $comment;
+                //$user_detailsテーブルと紐づける
+                $user_detail->trades()->save($trade);
+            }
+        );
         
         return view('withdraw/result', [
             'withdraw_time' => $withdraw_time,
