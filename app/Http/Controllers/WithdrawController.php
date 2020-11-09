@@ -16,6 +16,9 @@ class WithdrawController extends Controller
         //'withdraw_time'のキーがついたものだけ取り出す
         $withdraw_time = $request->input('withdraw_time');
         //viewに渡す
-        return view('withdraw/confirm', ['withdraw_time' => $withdraw_time]);
+        return view('withdraw/confirm', [
+            'withdraw_time' => $withdraw_time,
+            'user_detail_id' => $user_detail->id
+        ]);
     }
 }
