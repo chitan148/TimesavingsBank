@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\DB;
 class TradeController extends Controller
 {
     public function index(){
-        //$trades = DB::table('trades')->get();
         $trades = Trade::get();
-        $var = var_dump($trades);
+        $comments = array();
+        foreach($trades as $trade){
+            $comment = $trade->comment;
+            array_push($comments, $comment);
+        }
+        $var = var_dump($comments);
         return view('trades/index', ['var' => $var]);
         //return view('trades/index', ['trades' => $trades]);
     }
