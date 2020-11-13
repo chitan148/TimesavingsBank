@@ -90,12 +90,16 @@ class DepositController extends Controller
         //コメントもとってきてみる
         $comment = $request->input('comment');
 
+        //取引タイプへdepositを示す1を代入
+        $type = 1;
+
         //トランザクション開始
         DB::transaction(function () use(
             $user_detail,
             $saving_time,
             $gland_total,
             $comment,
+            $type,
             $missions) 
             {
                 //計算後の所有時間を記録　user_detailsテーブルの更新処理
@@ -103,11 +107,12 @@ class DepositController extends Controller
                 $user_detail->save();
         
                 //取引の記録をつける　tradesテーブルの新規作成処理
-                //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
+                //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメント、タイプにタイプをinsert
                 $trade = new Trade;
                 $trade->trading_time = $gland_total;
                 $trade->time_save_now = $saving_time;
                 $trade->comment = $comment;
+                $trade->type = $type;
                 //$user_detailsテーブルと紐づける
                 $user_detail->trades()->save($trade);
 
