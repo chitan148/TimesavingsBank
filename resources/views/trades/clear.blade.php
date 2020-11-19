@@ -6,7 +6,9 @@
     </head>
     <body>
         <h2>取引詳細</h2>
-        <p>{{ $data_pack }}</p>
         <p>{{ $var }}</p>
+        @foreach( $missions as $mission )
+            <p>{{ $mission->name }}</p>
+        @endforeach
     </body>
 </html>

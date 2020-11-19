@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TradeDetail extends Model
 {
-    public function missions()
+    public function mission()
     {
         return $this->belongsTo('App\Mission');
     }

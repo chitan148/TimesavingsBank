@@ -17,21 +17,17 @@ class TradeController extends Controller
     
     //$trade_id はviewのaタグから送られてきた、tradesテーブルのidカラムの中身。
     public function clear($trade_id){
-        $trade_details = TradeDetail::find($trade_id);
-            
-        //$var = var_dump($trade_details);
-        //return view('trades/clear', ['var' => $var]);
-
-        //選ばれたtrade_detailに紐づくmissionを取得 →　これ出来なかった　Call to undefined method App\TradeDetail::missions()
-        //$mission = $trade_detail->missions()->get();
-        //$data_pack = array();
+        $trade_details = TradeDetail::where( 'trade_id', $trade_id)->get();
+        //選ばれたtrade_detailに紐づくmissionを取得
+        $missions = array();
         foreach($trade_details as $trade_detail){
-            $mission = $trade_detail->missions()->get();
-        //    $mission = Mission::find($trade_detail->mission_id);
-        //    array_push($data_pack, $trade_detail, $mission);
+            $mission_data = $trade_detail->mission()->get();
+            foreach($mission_data as $mission){
+                array_push($missions, $mission);
+                $var = var_dump($mission);
+            }
         }
-        //$mission = Mission::find($trade_detail->mission_id);
-        $var = var_dump($mission);
-        return view('trades/clear', ['var' => $var]);
+        //$var = var_dump($mission);
+        return view('trades/clear', ['var' => $var, 'missions' => $missions]);
     }
 }
