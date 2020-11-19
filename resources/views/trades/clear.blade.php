@@ -6,7 +6,7 @@
     </head>
     <body>
         <h2>取引詳細</h2>
-        <p>{{ $trade_detail->id }}</p>
+        <p>{{ $data_pack }}</p>
         <p>{{ $var }}</p>
     </body>
 </html>
