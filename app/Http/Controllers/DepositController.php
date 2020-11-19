@@ -79,7 +79,7 @@ class DepositController extends Controller
         $user_name = $user_detail->name;
         //セッションから総計とデータパック配列を取得
         $gland_total = session('gland_total');
-        $missions = session('missions');
+        $datas = session('missions');
         
         //最新の所有時間情報を作る。
         //$saving_old_timeは今まで所有していた時間。
@@ -100,7 +100,7 @@ class DepositController extends Controller
             $gland_total,
             $comment,
             $type,
-            $missions) 
+            $datas) 
             {
                 //計算後の所有時間を記録　user_detailsテーブルの更新処理
                 $user_detail->saving_time = $saving_time;
@@ -117,14 +117,15 @@ class DepositController extends Controller
                 $user_detail->trades()->save($trade);
 
                 //trade_detailsの処理
-                foreach($missions as $mission){
+                foreach($datas as $data){
                     $detail = new TradeDetail;
-                    $detail->mission_id = $mission['mission_id'];
+                    $detail->mission_id = $data['mission_id'];
+                    $mission = Mission::find($data['mission_id']);
                     //$test = $mission['deposit_count'];
                     //$test = var_dump($test);
-                    $detail->mission_count = $mission['deposit_count'];
+                    $detail->mission_count = $data['deposit_count'];
                     $detail->trade_id = $trade->id;
-                    $detail->save();    
+                    $mission->tradeDetails()->save($detail);    
                 }
             }
         );
