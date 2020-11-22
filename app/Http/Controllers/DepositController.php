@@ -120,12 +120,13 @@ class DepositController extends Controller
                 foreach($datas as $data){
                     $detail = new TradeDetail;
                     $detail->mission_id = $data['mission_id'];
-                    $mission = Mission::find($data['mission_id']);
+                    //$mission = Mission::find($data['mission_id']);
                     //$test = $mission['deposit_count'];
                     //$test = var_dump($test);
                     $detail->mission_count = $data['deposit_count'];
                     $detail->trade_id = $trade->id;
-                    $mission->tradeDetails()->save($detail);    
+                    $detail->save();
+                    //$mission->tradeDetails()->save($detail);    
                 }
             }
         );
