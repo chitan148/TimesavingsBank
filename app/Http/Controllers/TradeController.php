@@ -21,13 +21,10 @@ class TradeController extends Controller
         //選ばれたtrade_detailに紐づくmissionを取得
         $missions = array();
         foreach($trade_details as $trade_detail){
-            $mission_data = $trade_detail->mission()->get();
-            foreach($mission_data as $mission){
-                array_push($missions, $mission);
-                $var = var_dump($mission);
-            }
+            array_push($missions, ['mission_name' => $trade_detail->mission->name, 'mission_count' => $trade_detail->mission_count]);
+            //$var = var_dump($mission_data);
         }
-        //$var = var_dump($mission);
+        $var = var_dump($missions);
         return view('trades/clear', ['var' => $var, 'missions' => $missions]);
     }
 }

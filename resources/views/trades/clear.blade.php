@@ -8,7 +8,8 @@
         <h2>取引詳細</h2>
         <p>{{ $var }}</p>
         @foreach( $missions as $mission )
-            <p>{{ $mission->name }}</p>
+            <p>{{ $mission['mission_name'] }}</p>
+            <p>{{ $mission['mission_count'] }}</p>
         @endforeach
     </body>
 </html>
