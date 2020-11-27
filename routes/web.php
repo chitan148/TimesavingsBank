@@ -23,3 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/register/result', 'auth/RegistorController@result')->name('register.result');
 Route::get('users/{user_detail}/missions/create', 'MissionController@showCreateMissionForm');
 Route::post('users/{user_detail}/missions/create', 'MissionController@create')->name('missions.create');
+Route::get('users/{user_detail}/deposit/index', 'DepositController@index')->name('deposit.index');
+Route::post('users/{user_detail}/deposit/confirm', 'DepositController@confirm')->name('deposit.confirm');
+Route::post('users/{user_detail}/deposit/result', 'DepositController@result')->name('deposit.result');
+//Route::post('users/{user_detail}/deposit/confirm', 'DepositController@confirm');
