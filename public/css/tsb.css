@@ -12,7 +12,7 @@ html {
     justify-content: space-between;
     padding: 0 2%;
     margin-bottom: 3rem;
-    font-size:2rem;
+    font-size:3rem;
     color: white;
 }
 
@@ -63,7 +63,7 @@ h1 {
 }
 @font-face {
 	font-family: 'AP';
-	src: url('fonts/AP.ttf');
+	src: url('/fonts/AP.ttf');
 }
 .Anzu {
     font-family: 'AP';
