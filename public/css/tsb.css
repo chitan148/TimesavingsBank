@@ -30,6 +30,11 @@ h1 {
     font-size: 5rem;
     text-align:center;  
 }
+.card-header{
+    font-size: 2rem;
+    padding-bottom: 0;
+}
+
 .purple{
     background: #e6e6fa;
     height: 500px;
@@ -70,6 +75,7 @@ h1 {
 }
 
 .btn-lg {
+    margin: 2rem 0 6rem 0;
     padding: 0.2rem;
     font-size: 2.5rem;
     line-height: 1.5;
