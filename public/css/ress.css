@@ -197,7 +197,6 @@ html [type="button"], /* Prevent a WebKit bug where (2) destroys native `audio` 
 }
 
 /* Remove the default button styling in all browsers */
-button,
 input,
 select,
 textarea {
