@@ -7,7 +7,7 @@
             <nav class="card border border-0">
                 <div class="card-header bg-transparent">ログイン</div>
 
-                <div class="card-body purple">
+                <div class="card-body light-blue">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
