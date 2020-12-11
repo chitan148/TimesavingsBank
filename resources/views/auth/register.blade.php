@@ -27,8 +27,8 @@
                 <div class="form-group">
                     @foreach(\App\UserDetail::GENDERS as $key => $value)
                         <div class="form-check form-check-inline">    
-                            <input type="radio" class="form-check-input" id="male" name="gender" value="{{$key}}">  
-                            <label for="male" class="form-check-label">{{$value}}</label>   
+                            <input type="radio" class="form-check-input" id="gender" name="gender" value="{{$key}}">  
+                            <label for="gender" class="form-check-label">{{$value}}</label>   
                         </div>
                     @endforeach
                 </div>
