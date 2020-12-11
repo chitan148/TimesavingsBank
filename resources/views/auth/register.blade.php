@@ -34,9 +34,18 @@
                 </div>
                 <button type="submit" class="btn-lg">送信</button>
             </form>
+            <div class="row">
+                <div class="col-lg-2">
+                    <img src="image/clock.png">
+                </div>
+                <div class="col-lg-8"></div>
+                <div class="col-lg-2">
+                    <img src="image/turtle-girl.png">
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <div class="row">
                 <div class="col-lg-2">
@@ -49,5 +58,6 @@
             </div>
         </div>  
     </div>
+    --}}
 </div>
 @endsection
