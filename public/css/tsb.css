@@ -41,7 +41,7 @@ h1 {
 
 .purple{
     background: #e6e6fa;
-    height: 620px;
+    height: 100%;
     text-align: center;
     padding-top: 2rem;
     font-size: 2.5rem;
@@ -49,7 +49,7 @@ h1 {
 
 .light-blue{
     background: #dbeefa;
-    height: 500px;
+    height: 100%;
     text-align: center;
     padding-top: 2rem;
     font-size: 2.5rem;
@@ -61,6 +61,15 @@ h1 {
     background-size: cover;
     position: relative;
 }
+
+.yellow{
+    background: #f7f1bf;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
 .skyblue{
     background: skyblue;
     height: 100px;
