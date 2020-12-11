@@ -19,6 +19,10 @@
                     <label for="password">パスワード</label>
                     <input type="text" class="form-control font-default" id="password" name="password" tabindex="3">
                 </div>
+                <div class="form-group">
+                    <label for="password-confirm">パスワード（確認）</label>
+                    <input type="password" class="form-control font-default" id="password-confirm" name="password_confirmation" tabindex="4">   
+                </div>
                 <p>性別</p>
                 <div class="form-group">
                     @foreach(\App\UserDetail::GENDERS as $key => $value)
