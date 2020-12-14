@@ -4,6 +4,9 @@
 html { 
     font-size: 62.5%; 
 }
+.container {
+    margin-bottom: 15px;
+}
 .my-navbar {
     align-items: center;
     background: #996600;
@@ -96,7 +99,7 @@ h1 {
 }
 
 .btn-lg {
-    margin: 2rem 0 6rem 0;
+    margin: 2rem 0 2rem 0;
     padding: 0.2rem;
     font-size: 2.5rem;
     line-height: 1.5;
@@ -105,4 +108,7 @@ h1 {
 .btn-lg:hover {
     color: #d2e1f0;
     text-decoration: underline;
+}
+.btn-lg-bottom{
+    margin: 2rem 0 6rem 0;
 }

@@ -19,7 +19,7 @@
                             <input type="password" class="form-control form-control-lg font-default" id="password" name="password">
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn-lg">送信</button>
+                            <button type="submit" class="btn-lg btn-lg-bottom">送信</button>
                         </div>    
                     </form>
                     <div class="text-center">
