@@ -29,9 +29,9 @@
                        @endforeach
                     </select>
                 </div>
-                <br>
                 <input type="submit" value="送信" class="btn-lg">
             </form>
+            
         </div>
     </div>
 </div>
