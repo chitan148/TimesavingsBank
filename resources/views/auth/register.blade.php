@@ -16,7 +16,7 @@
                     <input type="text" class="form-control font-default" id="name"  name="name" tabindex="2">
                 </div>
                 <div class="form-group">
-                    <label for="password">パスワード</label>
+                    <label for="password">パスワード(8文字以上）</label>
                     <input type="text" class="form-control font-default" id="password" name="password" tabindex="3">
                 </div>
                 <div class="form-group">
