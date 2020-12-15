@@ -12,6 +12,13 @@
                     <span>分</span><br>
                     <input type="submit" value="送信">
                 </div>
+                <div class="row">
+                    <div class="col-lg-9"></div>
+                    <div class="col-lg-2">
+                        <img src="{{ asset('image/turtle-boy.png') }}">
+                    </div>
+                    <div class="col-lg-1"></div>   
+                </div>
             </form>
         </div>
     </div>
