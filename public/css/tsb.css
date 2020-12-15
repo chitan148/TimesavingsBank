@@ -78,6 +78,12 @@ h1 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
 }
+.deposit-amount{
+    text-align: left;
+}
+.deposit-time{
+    text-align: right;
+}
 
 .key-visual {
     height: 700px;
