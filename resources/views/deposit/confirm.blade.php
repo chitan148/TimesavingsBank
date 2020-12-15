@@ -4,7 +4,6 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 offset-lg-2 pink">
-        {{-- <p>{{ $dump }}</p> --}}
         @foreach($missions as $mission)
             <p>{{ $mission['name'] }}</p>
             <p>{{ $mission['time'] }}</p>
