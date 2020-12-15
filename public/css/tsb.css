@@ -58,6 +58,19 @@ h1 {
     font-size: 2.5rem;
 }
 
+.pink-sm{
+    background: #fceff4;
+    height: 100%;
+    width: 45%;
+    margin-left:1rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
 .key-visual {
     height: 700px;
     background-image: url('img/cork_board2.jpg');
@@ -73,23 +86,6 @@ h1 {
     font-size: 2.5rem;
 }
 
-.skyblue{
-    background: skyblue;
-    height: 100px;
-    text-align: right;
-    line-height: 20px;
-    padding: 10px;
-}
-.pink{
-    background: pink;
-    height: 100px;
-    text-align: center;
-    line-height: 50px;
-}
-.test_picture{
-    height: 80px; 
-    background: white;
-}
 @font-face {
 	font-family: 'AP';
 	src: url('/fonts/AP.ttf');
@@ -111,4 +107,10 @@ h1 {
 }
 .btn-lg-bottom{
     margin: 2rem 0 6rem 0;
+}
+
+.input-sm{
+    width: 30%;
+    margin-bottom: 2rem;
+    display: inline-block;
 }
