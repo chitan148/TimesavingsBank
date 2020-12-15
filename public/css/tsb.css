@@ -88,7 +88,13 @@ h1 {
     margin: 3rem 0;
     border-bottom: double 0.5rem #cecccc;
 }
-
+.blue{
+    background: #cbe7f8;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
 .key-visual {
     height: 700px;
     background-image: url('img/cork_board2.jpg');
