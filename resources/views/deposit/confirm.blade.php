@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang = "ja">
-    <head>
-        <meta charset="utf-8">
-        <title>confirm</title>
-    </head>
-    <body>
+@extends('layouts.basic')
+
+@section('content')
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 offset-lg-2 pink">
         {{-- <p>{{ $dump }}</p> --}}
         @foreach($missions as $mission)
             <p>{{ $mission['name'] }}</p>
@@ -20,5 +19,7 @@
             <textarea id="comment" name="comment"></textarea>
             <input type="submit" value="送信">
         </form> 
-    </body>
-</html>
+        </div>
+    </div>
+</div>
+@endsection
