@@ -21,6 +21,13 @@
             </div>
             <p>{{ $user_name }}様</p>
             <p>現在の残高：{{ $saving_time }}分</p>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-2">
+                    <img src="{{ asset('image/turtle-girl.png') }}">
+                </div>
+                <div class="col-lg-1"></div>   
+            </div>
         </div>
     </div>
 </div>
