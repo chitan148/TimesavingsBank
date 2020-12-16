@@ -17,6 +17,13 @@
                     <input type="submit" value="確認" class="btn-lg">
                 </div>
             </form>
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-2">
+                    <img src="{{ asset('image/turtle-boy.png') }}">
+                </div>
+                <div class="col-lg-1"></div>   
+            </div>
         </div>
     </div>
 </div>
