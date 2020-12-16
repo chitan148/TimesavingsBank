@@ -28,6 +28,8 @@ class WithdrawController extends Controller
     }
 
     public function result(UserDetail $user_detail, Request $request){
+        //名前
+        $user_name = $user_detail->name;
         //セッションから出刻時間を取得
         $withdraw_time = session('withdraw_time');
         //リクエストからコメントを取得
@@ -69,6 +71,7 @@ class WithdrawController extends Controller
         // $request->session()->regenerateToken();
         
         return view('withdraw/result', [
+            'user_name' => $user_name,
             'withdraw_time' => $withdraw_time,
             'saving_old_time' => $saving_old_time,
             'saving_time' => $saving_time,
