@@ -64,6 +64,9 @@ class WithdrawController extends Controller
                 $user_detail->trades()->save($trade);
             }
         );
+
+        //リロード対策　トークン再発行　ページ編集後コメントアウトを消す。
+        // $request->session()->regenerateToken();
         
         return view('withdraw/result', [
             'withdraw_time' => $withdraw_time,
