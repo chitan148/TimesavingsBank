@@ -130,6 +130,9 @@ class DepositController extends Controller
                 }
             }
         );
+
+        //リロード対策　トークン再発行
+        // $request->session()->regenerateToken();
         
         return view('deposit.result', [
             'user_name' => $user_name,
