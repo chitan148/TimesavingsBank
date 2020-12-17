@@ -1,26 +1,17 @@
-@extends('layouts.basic')
-
-@section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 offset-lg-2 blue">
-            <h1>使った時間を入力しましょう</h1>
-            <form method="post" action= "{{ route('withdraw.confirm', ['user_detail' => $user_detail_id]) }}" >
-                @csrf
-                <div class="form-group"> 
-                    <input type="number" placeholder="0" name="withdraw_time" class="form-control font-default input-sm">
-                    <span>分</span><br>
-                    <input type="submit" value="送信">
-                </div>
-            </form>
-            <div class="row">
-                <div class="col-lg-9"></div>
-                <div class="col-lg-2">
-                    <img src="{{ asset('image/turtle-boy.png') }}">
-                </div>
-                <div class="col-lg-1"></div>   
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>出刻時間入力ページ</title>   
+    </head>
+    <body>
+        <h2>使用時間のご入力</h2>
+        
+        <form method="post" action= "{{ route('withdraw.confirm', ['user_detail' => $user_detail_id]) }}" >
+            @csrf    
+            <input type="number" placeholder="0" name="withdraw_time">
+            <span>分</span><br>
+            <input type="submit" value="確認">
+        </form>
+    </body>
+</html>

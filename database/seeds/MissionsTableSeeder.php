@@ -13,11 +13,11 @@ class MissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $user_detail = DB::table('user_details')->first();//user_detailsテーブルの最初の一行めを取得。
+        $user_detail_id = DB::table('user_details')->first();//user_detailsテーブルの最初の一行めのidを取得。
         
         DB::table('missions')->insert([
             [
-            'user_detail_id' => $user_detail->id,//一行めのidを取得
+            'user_detail_id' => $user_detail_id,
             'name' => '歩く',
             'time' => 30,
             'difficulty' => 3,
@@ -26,7 +26,7 @@ class MissionsTableSeeder extends Seeder
             'updated_at' => Carbon::now(),
             ],
             [
-            'user_detail_id' => $user_detail->id,
+            'user_detail_id' => $user_detail_id,
             'name' => '鍵をかける',
             'time' => 10,
             'difficulty' => 1,
@@ -35,7 +35,7 @@ class MissionsTableSeeder extends Seeder
             'updated_at' => Carbon::now(),
             ],
             [
-            'user_detail_id' => $user_detail->id,
+            'user_detail_id' => $user_detail_id,
             'name' => 'マスク',
             'time' => 10,
             'difficulty' => 1,
@@ -44,7 +44,7 @@ class MissionsTableSeeder extends Seeder
             'updated_at' => Carbon::now(),
             ],
             [
-            'user_detail_id' => $user_detail->id,
+            'user_detail_id' => $user_detail_id,
             'name' => 'ニンジンを食べる',
             'time' => 60,
             'difficulty' => 5,
@@ -53,7 +53,7 @@ class MissionsTableSeeder extends Seeder
             'updated_at' => Carbon::now(),
             ],
             [
-            'user_detail_id' => $user_detail->id,
+            'user_detail_id' => $user_detail_id,
             'name' => '電気を消す',
             'time' => 10,
             'difficulty' => 1,
