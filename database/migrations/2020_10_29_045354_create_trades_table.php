@@ -18,7 +18,6 @@ class CreateTradesTable extends Migration
             $table->bigInteger('user_detail_id')->unsigned();
             $table->bigInteger('trading_time')->unsigned();
             $table->bigInteger('time_save_now')->unsigned();
-            $table->bigInteger('type')->unsigned();
             $table->string('comment', 191);
             $table->timestamps();
             $table->foreign('user_detail_id')->references('id')->on('user_details');
