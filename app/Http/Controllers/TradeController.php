@@ -13,11 +13,7 @@ class TradeController extends Controller
 {
     public function index(){
         $trades = Trade::get();
-        // foreach($trades as $trade){
-        //     $dump = $trade->user_detail->name;
-        // }
         return view('trades/index', ['trades' => $trades, 
-        // 'var'=>$dump
         ]);
     }
     
