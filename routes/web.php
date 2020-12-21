@@ -30,5 +30,6 @@ Route::post('users/{user_detail}/deposit/result', 'DepositController@result')->n
 Route::get('users/{user_detail}/withdraw/index', 'WithdrawController@index')->name('withdraw.index');
 Route::post('users/{user_detail}/withdraw/confirm', 'WithdrawController@confirm')->name('withdraw.confirm');
 Route::post('users/{user_detail}/withdraw/result', 'WithdrawController@result')->name('withdraw.result');
-Route::get('trades/index', 'TradeController@index')->name('trade.index');
-Route::get('trades/{trades}', 'TradeController@clear')->name('trades.clear');
+// Route::get('trades/index', 'TradeController@index')->name('trade.index');
+Route::get('users/{user_detail}/trades/index', 'TradeController@index')->name('trade.index');
+// Route::get('trades/{trades}', 'TradeController@clear')->name('trades.clear');
