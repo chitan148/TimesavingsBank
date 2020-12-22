@@ -14,7 +14,7 @@
             <p>{{ $trade->comment }}</p>
             <p>{{ $trade->type }}</p>
             <p>{{ $trade->user_detail->name }}</p>
-            <p>{{ $trade->trade_details->mission->name }}</p>
+            <p>{{ $trade_detail->mission->name }}</p>
         @endforeach
     </body>
 </html>

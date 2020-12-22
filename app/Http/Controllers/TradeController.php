@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\DB;
 class TradeController extends Controller
 {
     public function index(UserDetail $user_detail){
+        // $user_detailに紐づくtradesテーブルの中身をget
         $trades = $user_detail->trades()->get();
-        return view('trades/index', ['trades' => $trades, 
-        ]);
+        // $user_detailに紐づくtrade_detailsテーブルの中身をget
+        $trade_details = $user_detail->trades()->trade_details()->get();
+        return view('trades/index', ['trades' => $trades, 'trade_details' => $trade_details]);
     }
     
     //$trade_id はviewのaタグから送られてきた、tradesテーブルのidカラムの中身。
