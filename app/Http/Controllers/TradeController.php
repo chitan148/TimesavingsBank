@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\DB;
 
 class TradeController extends Controller
 {
-    public function index(){
-        $trades = Trade::get();
+    public function index(UserDetail $user_detail){
+        $trades = $user_detail->trades()->get();
         return view('trades/index', ['trades' => $trades, 
         ]);
     }
