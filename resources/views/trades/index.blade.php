@@ -14,9 +14,7 @@
             <p>{{ $trade->comment }}</p>
             <p>{{ $trade->type }}</p>
             <p>{{ $trade->user_detail->name }}</p>
-            @if( $trade->type === 1)
-                <a href="{{ route('trades.clear', ['trades' => $trade->id ]) }}">{{$trade->id}}</a>
-            @endif
+            <p>{{ $trade->trade_details->mission->name }}</p>
         @endforeach
     </body>
 </html>
