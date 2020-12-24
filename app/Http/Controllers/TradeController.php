@@ -12,16 +12,25 @@ use Illuminate\Support\Facades\DB;
 class TradeController extends Controller
 {
     public function index(UserDetail $user_detail){
-        // $user_detailに紐づくtradesテーブルの中身をget
-        $trades = $user_detail->trades()->get();
-        // $user_detailに紐づくtradesテーブルのidがtype1のレコードをget
-        $trade_id = $user_detail->trades()->where('type',1);
-        $var = var_dump($trade_id);
+        // $trades = $user_detail->trades->trading_time; ←これができないせいで
+        $trades = Trade::where( 'user_detail_id', $user_detail->id)->where('type', '1')->get();//type1も追加
+        // $trades = $user_detail->trades()->get(); これでもできるかもしれないのであとで実験
+        
+        $trade_details_datas = array();
+        foreach($trades as $trade){
+            //ここで$trade->idが取れているはず。
+            $trade_details = TradeDetail::where('trade_id', $trade->id)->get();
+            array_push($trade_details_datas, $trade_details);
+        }
+        $var2 = var_dump($trade_details_datas);
+        
+        $var = var_dump($trade_details);
         return view('trades/index', [
-            'trades' => $trades, 
-            // 'trade_details' => $trade_details,
-            'var' => $var
-            ]);
+            'trades' => $trades,
+            // 'missions' => $missions,
+            'trade_details_datas' => $trade_details_datas,
+            'var2' => $var2
+        ]);
     }
     
     //$trade_id はviewのaタグから送られてきた、tradesテーブルのidカラムの中身。
@@ -36,7 +45,7 @@ class TradeController extends Controller
         // $var = var_dump($missions);
         return view('trades/clear', [
             // 'var' => $var, 
-            'missions' => $missions
+            'missions' => $missions,
         ]);
     }
 }
