@@ -8,7 +8,11 @@
         <h2>取引履歴</h2>
         @foreach($trade_details_datas as $trade_details)
             @foreach($trade_details as $trade_detail)
-                <p>{{ $trade_detail->mission->name }}</p>
+                @if($loop->first)
+                    <p></p>
+                    <p>{{ $trade_detail->mission->name }}</p>
+                @else
+                    <p>{{ $trade_detail->mission->name }}</p>
             @endforeach
         @endforeach
 
