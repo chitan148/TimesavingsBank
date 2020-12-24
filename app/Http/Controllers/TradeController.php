@@ -13,21 +13,21 @@ class TradeController extends Controller
 {
     public function index(UserDetail $user_detail){
         // $trades = $user_detail->trades->trading_time; ←これができないせいで
-        $trades = Trade::where( 'user_detail_id', $user_detail->id)->where('type', '1')->get();//type1のみ抽出
+        $trades_type_one = Trade::where( 'user_detail_id', $user_detail->id)->where('type', '1')->get();//type1のみ抽出
         // $trades = $user_detail->trades()->get(); これでもできるかもしれないのであとで実験
         
         $trade_details_datas = array();
-        foreach($trades as $trade){
+        foreach($trades_type_one as $trade){
             //ここで$trade->idが取れているはず。
             $trade_details = TradeDetail::where('trade_id', $trade->id)->get();
             array_push($trade_details_datas, $trade_details);
         }
+        $trades = Trade::where( 'user_detail_id', $user_detail->id)->get();
         
         return view('trades/index', [
             'trades' => $trades,
             'trade_details_datas' => $trade_details_datas,
-            'user_name' => $user_detail->name,
-            'user_gender' => $user_detail->gender
+            'user_detail' => $user_detail
         ]);
     }
     
