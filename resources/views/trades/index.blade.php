@@ -25,13 +25,16 @@
                     </div>
 
                     <div class="col-lg-4 offset-lg-2 white">
-                        @foreach($trades as $trade)
-                            @if ($trade->type === 2)
-                                <p>{{ $trade->trading_time }}分使いました。</p>
-                                <p>残りは{{ $trade->time_save_now }}分です。</p>
-                                <p>「{{ $trade->comment }}」</p>
-                            @endif
-                        @endforeach
+                        <h2>出刻履歴</h2>
+                        <div class="record_wrapper">
+                            @foreach($trades as $trade)
+                                @if ($trade->type === 2)
+                                    <p>{{ $trade->trading_time }}分使いました。</p>
+                                    <p>残りは{{ $trade->time_save_now }}分です。</p>
+                                    <p>「{{ $trade->comment }}」</p>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
