@@ -12,10 +12,11 @@
                             @foreach($trade_details_datas as $trade_details)
                                @foreach($trade_details as $trade_detail)
                                    @if($loop->first)
-                                       <p>{{ $trade_detail->trade->trading_time }}分貯めました。</p>
-                                       <p>残りは{{ $trade_detail->trade->time_save_now }}分です。</p>
-                                       <p>「{{ $trade_detail->trade->comment }}」</p>
-                                       <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
+                                        <p>{{ $trade_detail->trade->created_at->format('Y年m月d日') }}</p>
+                                        <p>{{ $trade_detail->trade->trading_time }}分貯めました。</p>
+                                        <p>残りは{{ $trade_detail->trade->time_save_now }}分です。</p>
+                                        <p>「{{ $trade_detail->trade->comment }}」</p>
+                                        <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
                                    @else
                                        <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
                                    @endif
@@ -29,6 +30,7 @@
                         <div class="record_wrapper">
                             @foreach($trades as $trade)
                                 @if ($trade->type === 2)
+                                    <p>{{ $trade->created_at->format('Y年m月d日') }}</p>
                                     <p>{{ $trade->trading_time }}分使いました。</p>
                                     <p>残りは{{ $trade->time_save_now }}分です。</p>
                                     <p>「{{ $trade->comment }}」</p>
