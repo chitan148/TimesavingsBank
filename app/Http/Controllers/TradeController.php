@@ -22,14 +22,10 @@ class TradeController extends Controller
             $trade_details = TradeDetail::where('trade_id', $trade->id)->get();
             array_push($trade_details_datas, $trade_details);
         }
-        $var2 = var_dump($trade_details_datas);
         
-        $var = var_dump($trade_details);
         return view('trades/index', [
             'trades' => $trades,
-            // 'missions' => $missions,
             'trade_details_datas' => $trade_details_datas,
-            'var2' => $var2
         ]);
     }
     
