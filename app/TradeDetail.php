@@ -10,4 +10,9 @@ class TradeDetail extends Model
     {
         return $this->belongsTo('App\Mission');
     }
+    
+    public function trade()
+    {
+        return $this->belongsTo('App\Trade');
+    }
 }
