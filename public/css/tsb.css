@@ -121,9 +121,15 @@ h1 {
 .white {
     background: #ffffff;
     height: 100%;
-    text-align: center;
+    text-align: left;
     padding-top: 2rem;
     font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+.record_wrapper{
+    text-decoration: none;
+    display: inline-block;
 }
 
 @font-face {
