@@ -9,10 +9,11 @@
         @foreach($trade_details_datas as $trade_details)
             @foreach($trade_details as $trade_detail)
                 @if($loop->first)
-                    <p></p>
+                    <p>{{ $trade_detail->trade->comment}}</p>
                     <p>{{ $trade_detail->mission->name }}</p>
                 @else
                     <p>{{ $trade_detail->mission->name }}</p>
+                @endif
             @endforeach
         @endforeach
 
