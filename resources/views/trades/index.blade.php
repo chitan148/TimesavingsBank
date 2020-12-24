@@ -5,10 +5,13 @@
         <title>取引履歴</title>   
     </head>
     <body>
-        <h2>取引履歴</h2>
+        <h1>取引履歴</h1>
+
         @foreach($trade_details_datas as $trade_details)
             @foreach($trade_details as $trade_detail)
                 @if($loop->first)
+                    <p>{{ $trade_detail->trade->trading_time}}</p>
+                    <p>{{ $trade_detail->trade->time_save_now}}</p>
                     <p>{{ $trade_detail->trade->comment}}</p>
                     <p>{{ $trade_detail->mission->name }}</p>
                 @else
@@ -18,19 +21,10 @@
         @endforeach
 
         @foreach($trades as $trade)
-            <p>{{ $trade->id }}</p>
-            <p>{{ $trade->user_detail_id }}</p>
             <p>{{ $trade->trading_time }}</p>
             <p>{{ $trade->time_save_now }}</p>
             <p>{{ $trade->comment }}</p>
-            <p>{{ $trade->type }}</p>
-            <p>{{ $trade->user_detail->name }}</p>
         @endforeach
         
-        {{-- <p>{{ $var }}</p> --}}
-        <p>{{ $var2 }}</p>
-        {{--@foreach( $missions as $mission )
-            <p>{{$mission['mission_name']}}</p>
-        @endforeach --}}
     </body>
 </html>
