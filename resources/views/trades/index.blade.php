@@ -6,14 +6,17 @@
             <div class="col green">
                 <div class="row">
                     <div class="col-lg-2">
-                        @if($user_detail->gender === 1)
-                            <img src="{{ asset('image/turtle-boy.png') }}">
-                        @else
-                        <img src="{{ asset('image/turtle-girl.png') }}"> 
-                        @endif   
+                        <img src="{{ asset('image/clock.png') }}">
                     </div>
-                    <div class="col-lg-8">
-                        <h1>{{$user_detail->name}}さんの取引履歴</h1>
+                    <div class="col-lg-8">   
+                        <h1>
+                            {{$user_detail->name}}さんの取引履歴
+                            @if($user_detail->gender === 1)
+                                <img src="{{ asset('image/turtle-boy-sm.png') }}">
+                            @else
+                                <img src="{{ asset('image/turtle-girl-sm.png') }}"> 
+                            @endif
+                        </h1>
                     </div>
                         <img src="{{ asset('image/time_lose.png') }}">
                     <div class="col-lg-2">
