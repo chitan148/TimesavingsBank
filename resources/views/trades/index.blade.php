@@ -6,7 +6,7 @@
             <div class="col green">
                 <div class="row">
                     <div class="col-lg-2">
-                        <img src="{{ asset('image/clock.png') }}">
+                        <img src="{{ asset('image/clock-sm.png') }}">
                     </div>
                     <div class="col-lg-8">   
                         <h1>
@@ -58,7 +58,7 @@
                                 @if ($trade->type === 2)
                                     <div class="card">
                                         <div class="card-header withdraw_color">{{ $trade->created_at->format('Y年m月d日') }}</div>
-                                        <div>
+                                        <div class= "card-body">
                                             <p>{{ $trade->trading_time }}分使いました。</p>
                                             <p>残りは{{ $trade->time_save_now }}分です。</p>
                                             <p>「{{ $trade->comment }}」</p>
