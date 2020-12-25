@@ -4,7 +4,22 @@
     <div class="container">
     	<div class="row">
             <div class="col green">
-                <h1>{{$user_detail->name}}さんの取引履歴</h1>
+                <div class="row">
+                    <div class="col-lg-2">
+                        @if($user_detail->gender === 1)
+                            <img src="{{ asset('image/turtle-boy.png') }}">
+                        @else
+                        <img src="{{ asset('image/turtle-girl.png') }}"> 
+                        @endif   
+                    </div>
+                    <div class="col-lg-8">
+                        <h1>{{$user_detail->name}}さんの取引履歴</h1>
+                    </div>
+                        <img src="{{ asset('image/time_lose.png') }}">
+                    <div class="col-lg-2">
+
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-4 offset-lg-1 white">
                         <h2>入刻履歴</h2>
@@ -38,10 +53,14 @@
                         <div class="record_wrapper">
                             @foreach($trades as $trade)
                                 @if ($trade->type === 2)
-                                    <p>{{ $trade->created_at->format('Y年m月d日') }}</p>
-                                    <p>{{ $trade->trading_time }}分使いました。</p>
-                                    <p>残りは{{ $trade->time_save_now }}分です。</p>
-                                    <p>「{{ $trade->comment }}」</p>
+                                    <div class="card">
+                                        <div class="card-header withdraw_color">{{ $trade->created_at->format('Y年m月d日') }}</div>
+                                        <div>
+                                            <p>{{ $trade->trading_time }}分使いました。</p>
+                                            <p>残りは{{ $trade->time_save_now }}分です。</p>
+                                            <p>「{{ $trade->comment }}」</p>
+                                        </div>
+                                    </div>
                                 @endif
                             @endforeach
                         </div>
