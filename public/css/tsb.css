@@ -46,6 +46,9 @@ h1 {
 .deposit_color{
     background: #fceff4;
 }
+.withdraw_color{
+    background: #cbe7f8;
+}
 .mission_record{
     background: #fceff4;
     height: 100%;
