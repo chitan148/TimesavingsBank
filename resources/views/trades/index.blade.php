@@ -11,14 +11,22 @@
                         <div class="record_wrapper">
                             @foreach($trade_details_datas as $trade_details)
                                @foreach($trade_details as $trade_detail)
-                                   @if($loop->first)
-                                        <p>{{ $trade_detail->trade->created_at->format('Y年m月d日') }}</p>
-                                        <p>{{ $trade_detail->trade->trading_time }}分貯めました。</p>
-                                        <p>残りは{{ $trade_detail->trade->time_save_now }}分です。</p>
-                                        <p>「{{ $trade_detail->trade->comment }}」</p>
-                                        <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
+                                    @if($loop->first)
+                                        <div class="card">
+                                            <div class="card-header deposit_color">{{ $trade_detail->trade->created_at->format('Y年m月d日') }}</div>
+                                            <div class= "card-body">  
+                                                <p>{{ $trade_detail->trade->trading_time }}分貯めました。</p>
+                                                <p>残りは{{ $trade_detail->trade->time_save_now }}分です。</p>
+                                                <p>「{{ $trade_detail->trade->comment }}」</p>
+                                            </div>
+                                        </div>
+                                        <div class="mission_record">
+                                            <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
+                                        </div>
                                    @else
-                                       <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
+                                        <div class="mission_record">
+                                            <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
+                                        </div>   
                                    @endif
                                @endforeach
                             @endforeach

@@ -33,10 +33,31 @@ h1 {
     font-size: 5rem;
     text-align:center;  
 }
+
+.card{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
 .card-header{
     font-size: 2rem;
     padding-bottom: 0;
 }
+.deposit_color{
+    background: #fceff4;
+}
+.mission_record{
+    background: #fceff4;
+    height: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.mission_record p{
+    margin-bottom: 0;
+}
+
 .font-default{
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 1.75rem;
