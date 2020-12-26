@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード(8文字以上）</label>
-                    <input type="text" class="form-control font-default" id="password" name="password" tabindex="3">
+                    <input type="password" class="form-control font-default" id="password" name="password" tabindex="3">
                 </div>
                 <div class="form-group">
                     <label for="password-confirm">パスワード（確認）</label>
