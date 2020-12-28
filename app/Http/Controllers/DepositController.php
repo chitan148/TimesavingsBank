@@ -17,15 +17,14 @@ class DepositController extends Controller
         //ログインしているユーザーの$user_detailに紐づくmissionsを取得
         $missions = $user_detail->missions()->get();
         //missionの数を数える　
-        $count = $missions->count();
-        $var = var_dump($count);      
-
+        $count = $missions->count();//mission未作成の場合はint型の0が入っている。
+        // $var = var_dump($count);
         //viewに渡します
         return view('deposit.index', [
             'missions' => $missions,
             'count' => $count,
             'user_detail_id' => $user_detail->id,
-            'var' => $var
+            // 'var' => $var
         ]);
    }
    public function confirm(UserDetail $user_detail, Request $request){
