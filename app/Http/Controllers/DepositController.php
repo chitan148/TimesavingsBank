@@ -18,13 +18,15 @@ class DepositController extends Controller
         $missions = $user_detail->missions()->get();
         //missionの数を数える　
         $count = $missions->count();//mission未作成の場合はint型の0が入っている。
-        // $var = var_dump($count);
-        //viewに渡します
+
+        //mission未作成の場合のメッセージ作成。
+        $message = 'ミッションを作成しましょう';
+        
         return view('deposit.index', [
             'missions' => $missions,
             'count' => $count,
             'user_detail_id' => $user_detail->id,
-            // 'var' => $var
+            'message' => $message
         ]);
    }
    public function confirm(UserDetail $user_detail, Request $request){
