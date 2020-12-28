@@ -54,7 +54,7 @@
                     <div class="col-lg-4 offset-lg-2 white">
                         <h2>出刻履歴</h2>
                         <div class="record_wrapper">
-                            @foreach($trades as $trade)
+                            @foreach($user_detail->trades as $trade)
                                 @if ($trade->type === 2)
                                     <div class="card">
                                         <div class="card-header withdraw_color">{{ $trade->created_at->format('Y年m月d日') }}</div>
