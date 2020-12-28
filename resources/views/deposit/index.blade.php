@@ -5,6 +5,7 @@
 	<div class="container mt-2">
 		<div class="alert alert-success">
 			{{ $message }}
+			<a href="{{ route('missions.create',['user_detail' => $user_detail_id])}}">→「つくる」</a>
 		</div>
 	</div>
 @else

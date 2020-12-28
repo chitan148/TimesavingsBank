@@ -20,7 +20,7 @@ class DepositController extends Controller
         $count = $missions->count();//mission未作成の場合はint型の0が入っている。
 
         //mission未作成の場合のメッセージ作成。
-        $message = 'ミッションを作成しましょう';
+        $message = 'ミッションを作成しましょう。';
         
         return view('deposit.index', [
             'missions' => $missions,
