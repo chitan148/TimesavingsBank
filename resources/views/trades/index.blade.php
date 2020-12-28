@@ -27,8 +27,8 @@
                     <div class="col-lg-4 offset-lg-1 white">
                         <h2>入刻履歴</h2>
                         <div class="record_wrapper">
-                            @foreach($trade_details_datas as $trade_details)
-                               @foreach($trade_details as $trade_detail)
+                            @foreach($user_detail->trades as $trade)
+                               @foreach($trade as $trade_detail)
                                     @if($loop->first)
                                         <div class="card">
                                             <div class="card-header deposit_color">{{ $trade_detail->trade->created_at->format('Y年m月d日') }}</div>
