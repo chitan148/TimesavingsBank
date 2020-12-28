@@ -38,14 +38,10 @@
                                                 <p>「{{ $trade_detail->trade->comment }}」</p>
                                             </div>
                                         </div>
+                                    @endif
                                         <div class="mission_record">
                                             <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
                                         </div>
-                                   @else
-                                        <div class="mission_record">
-                                            <p>{{ $trade_detail->mission->name }}✕{{ $trade_detail->mission_count }}回</p>
-                                        </div>   
-                                   @endif
                                @endforeach
                             @endforeach
                         </div>
