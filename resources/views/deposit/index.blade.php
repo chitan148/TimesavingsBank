@@ -20,9 +20,13 @@
 							</div>
 						@endforeach
 					<div class="row">
-						<div class="col-lg-2 offset-lg-5">
-							<input type="submit" value="計算する" class="btn-lg">
-						</div>
+						@if($count === 0)
+							<p class="col-lg-4 offset-lg-4">ミッションを登録して下さい。</p>
+						@else
+							<div class="col-lg-2 offset-lg-5">	
+								<input type="submit" value="計算する" class="btn-lg">
+							</div>
+						@endif
 					</div>	
 				</form>
 			</div>
