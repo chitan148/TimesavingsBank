@@ -22,6 +22,7 @@ class DepositController extends Controller
         //未作成の場合はミッション作成画面にリダイレクト
         if($count === 0){
             return redirect()->route('missions.create',['user_detail' => $user_detail->id]);
+            // ->with('my_status',('登録されました'); これをつけるにはどうしたらいいのか
         
         } else {
 
