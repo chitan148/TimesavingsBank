@@ -18,16 +18,19 @@ class DepositController extends Controller
         $missions = $user_detail->missions()->get();
         //missionの数を数える　
         $count = $missions->count();//mission未作成の場合はint型の0が入っている。
-
-        //mission未作成の場合のメッセージ作成。
-        $message = 'ミッションを作成しましょう。';
         
-        return view('deposit.index', [
-            'missions' => $missions,
-            'count' => $count,
-            'user_detail_id' => $user_detail->id,
-            'message' => $message
-        ]);
+        //未作成の場合はミッション作成画面にリダイレクト
+        if($count === 0){
+            return redirect()->route('missions.create',['user_detail' => $user_detail->id]);
+        
+        } else {
+
+            return view('deposit.index', [
+                'missions' => $missions,
+                'count' => $count,
+                'user_detail_id' => $user_detail->id,
+            ]);
+        }
    }
    public function confirm(UserDetail $user_detail, Request $request){
         //'mission_id'のキーがついたものだけ取り出す
