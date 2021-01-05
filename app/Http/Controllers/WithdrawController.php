@@ -32,8 +32,11 @@ class WithdrawController extends Controller
         $user_name = $user_detail->name;
         //セッションから出刻時間を取得
         $withdraw_time = session('withdraw_time');
-        //リクエストからコメントを取得
+        //リクエストからコメントを取得。null(入力無し)の時は空文字を入れる。
         $comment = $request->input('comment');
+        if($comment === null ){
+            $comment = '';
+        }
         
         //所有時間情報を計算して更新。
         //$saving_old_timeは今まで所有していた時間。
