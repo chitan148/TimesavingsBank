@@ -93,8 +93,11 @@ class DepositController extends Controller
         //総計　を足し算して　代入（更新）
         $saving_time = $saving_old_time + $gland_total;
         
-        //コメントもとってきてみる
+        //コメントもとってきてみる　null(入力無し)の時は空文字を入れる。
         $comment = $request->input('comment');
+        if($comment === null ){
+            $comment = '';
+        }
 
         //取引タイプへdepositを示す1を代入
         $type = 1;
