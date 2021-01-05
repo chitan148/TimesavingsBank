@@ -201,3 +201,9 @@ h1 {
     background-color: #d7f3e3;
     border-color: #c7eed8;
   }
+
+.alert-warning {
+  color: #857b26;
+  background-color: #fffbdb;
+  border-color: #fffacc;
+}

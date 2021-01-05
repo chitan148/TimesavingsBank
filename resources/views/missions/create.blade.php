@@ -4,7 +4,7 @@
 
 @if (session('my_status'))
     <div class="container mt-2">
-        <div class="alert alert-success">
+        <div class="alert alert-warning">
             {{ session('my_status') }}
         </div>
     </div>
