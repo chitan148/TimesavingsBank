@@ -1,4 +1,4 @@
-@extends('layouts.basic')
+@extends('layouts.basic_for_home')
 
 @section('content')
 @if (session('my_status'))
