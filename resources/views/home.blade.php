@@ -9,7 +9,11 @@
     </div>
 @endif
 
-<div class="container">
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col no-gutters">
+          <img class="img-fluid" src="{{ asset('image/cork_board.jpg') }}">
+        </div>
+    </div>
 </div>
 @endsection
