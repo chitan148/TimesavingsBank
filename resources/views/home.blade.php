@@ -1,6 +1,7 @@
 @extends('layouts.basic_for_home')
 
 @section('content')
+
 @if (session('my_status'))
     <div class="container mt-2">
         <div class="alert alert-success">
@@ -11,8 +12,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col no-gutters">
-          <img class="img-fluid" src="{{ asset('image/cork_board.jpg') }}">
+        <div class="col key-visual">
+          <img class="key-picture" src="{{ asset('image/key-picture.png') }}">
         </div>
     </div>
 </div>

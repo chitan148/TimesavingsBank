@@ -133,9 +133,17 @@ h1 {
 }
 .key-visual {
     height: 700px;
-    background-image: url('img/cork_board2.jpg');
+    /* cssでpublicの画像を読み込むときはasset要らないらしいよ　最初に/をつける。 */
+    background-image: url('/image/cork_board.jpg'); 
     background-size: cover;
     position: relative;
+}
+
+.key-visual img{
+    display: block;
+    width: 70%;
+    height: 500px;
+    margin: 0 auto;
 }
 
 .yellow{
@@ -219,14 +227,12 @@ h1 {
   background-color: #fffbdb;
   border-color: #fffacc;
 }
-
-.no-gutters {
-    margin:0;
-    padding:0;
-  }
    
-  .no-gutters　> .col,
-  .no-gutters　> [class*="col-"] {
-    margin:0;
-    padding:0;
-  }
+/* .no-gutters　> .col,
+.no-gutters　> [class*="col-"] {
+  margin:0;
+  padding:0;
+} 
+html（blade）側でimgをcol間のmarginやpaddingを０にして表示させるクラスっぽいので、
+今回はcss側（background-image）で読み込んでいるので不要
+*/
