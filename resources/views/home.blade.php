@@ -13,7 +13,21 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col key-visual">
-          <img class="key-picture" src="{{ asset('image/key-picture.png') }}">
+            <div class="row">
+                <img class="key-picture" src="{{ asset('image/key-picture.png') }}" alt="びるだーず">
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-2">
+                    <div class="row">
+                        <div class="col-lg-10 offset-1">
+                            <button img src="{{ asset('image/');">つくる</button>
+                            <button>ためる</button>
+                            <button>つかう</button>
+                            <button>りれき</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
