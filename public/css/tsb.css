@@ -139,12 +139,26 @@ h1 {
     position: relative;
 }
 
-.key-visual img{
+.key-picture{
     display: block;
     width: 70%;
     height: 500px;
     margin: 2rem auto;
 }
+
+.guide-wrapper button{
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+  
+
+.guide-wrapper img{
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 50px;
+  }
 
 .yellow{
     background: #f7f1bf;
