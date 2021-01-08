@@ -21,9 +21,9 @@
                     <div class="row">
                         <div class="col-lg-10 offset-1 guide-wrapper">
                             <button><img src="{{ asset('image/m_tape_yellow.png') }}"></button>
-                            <button>ためる</button>
-                            <button>つかう</button>
-                            <button>りれき</button>
+                            <button><img src="{{ asset('image/m_tape_pink.png') }}"></button>
+                            <button><img src="{{ asset('image/m_tape_blue.png') }}"></button>
+                            <button><img src="{{ asset('image/m_tape_green.png') }}"></button>
                         </div>
                     </div>
                 </div>
