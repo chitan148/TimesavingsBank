@@ -17,15 +17,11 @@
                 <img class="key-picture" src="{{ asset('image/key-picture.png') }}" alt="びるだーず">
             </div>
             <div class="row">
-                <div class="col-lg-8 offset-2">
-                    <div class="row">
-                        <div class="col-lg-10 offset-1 guide-wrapper">
-                            <button><img src="{{ asset('image/m_tape_yellow.png') }}"></button>
-                            <button><img src="{{ asset('image/m_tape_pink.png') }}"></button>
-                            <button><img src="{{ asset('image/m_tape_blue.png') }}"></button>
-                            <button><img src="{{ asset('image/m_tape_green.png') }}"></button>
-                        </div>
-                    </div>
+                <div class="col-lg-8 offset-2 guide-wrapper">    
+                    <button><img src="{{ asset('image/m_tape_yellow.png') }}"></button>
+                    <button><img src="{{ asset('image/m_tape_pink.png') }}"></button>
+                    <button><img src="{{ asset('image/m_tape_blue.png') }}"></button>
+                    <button><img src="{{ asset('image/m_tape_green.png') }}"></button>
                 </div>
             </div>
         </div>
