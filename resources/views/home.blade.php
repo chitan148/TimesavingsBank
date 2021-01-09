@@ -22,6 +22,10 @@
                     <button><img src="{{ asset('image/m_tape_pink.png') }}"></button>
                     <button><img src="{{ asset('image/m_tape_blue.png') }}"></button>
                     <button><img src="{{ asset('image/m_tape_green.png') }}"></button>
+                    <a href="">つくる</a>
+                    <a href="">ためる</a>
+                    <a href="">つかう</a>
+                    <a href="">りれき</a>
                 </div>
             </div>
         </div>
