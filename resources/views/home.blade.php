@@ -22,10 +22,10 @@
                     <button><img src="{{ asset('image/m_tape_pink.png') }}"></button>
                     <button><img src="{{ asset('image/m_tape_blue.png') }}"></button>
                     <button><img src="{{ asset('image/m_tape_green.png') }}"></button>
-                    <a href="">つくる</a>
-                    <a href="">ためる</a>
-                    <a href="">つかう</a>
-                    <a href="">りれき</a>
+                    <a href="{{ route('missions.create', ['user_detail' => $user_detail_id]) }}">つくる</a>
+                    <a href="{{ route('deposit.index', ['user_detail' => $user_detail_id]) }}">ためる</a>
+                    <a href="{{ route('withdraw.index', ['user_detail' => $user_detail_id]) }}">つかう</a>
+                    <a href="{{ route('trade.index', ['user_detail' => $user_detail_id]) }}">りれき</a>
                 </div>
             </div>
         </div>
