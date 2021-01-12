@@ -26,9 +26,9 @@ class CreateMission extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:20|min:1', //文字がゼロ個はエラーにする
+            'name' => 'required|max:30|min:1', //文字がゼロ個以下または30個以上はエラーにする
             'time' => ['required', new positive_integers],//負の数はエラー
-            'difficulty' => ['required', new difficulty]//負の数はエラー
+            'difficulty' => ['required', new difficulty]//１~５でないものはエラー
         ];
     }
     public function attributes(){
@@ -38,5 +38,4 @@ class CreateMission extends FormRequest
             'difficulty' => '「むずかしさ」',
         ];
     }
-
 }
