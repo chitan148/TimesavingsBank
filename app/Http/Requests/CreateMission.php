@@ -26,7 +26,7 @@ class CreateMission extends FormRequest
     {
         return [
             'name' => 'required|max:20|min:1', //文字がゼロ個はエラーにする
-            'time' => 'required|positive_integers' //負の数はエラー
+            'time' => ['required', new positive_integers]//負の数はエラー
         ];
     }
     public function attributes(){
