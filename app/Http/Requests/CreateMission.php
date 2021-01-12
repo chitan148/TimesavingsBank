@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\positive_integers;
 
 class CreateMission extends FormRequest
 {
@@ -25,7 +26,7 @@ class CreateMission extends FormRequest
     {
         return [
             'name' => 'required|max:20|min:1', //文字がゼロ個はエラーにする
-            'time' => 'required|integer' //負の数はエラー
+            'time' => 'required|positive_integers' //負の数はエラー
         ];
     }
     public function attributes(){
