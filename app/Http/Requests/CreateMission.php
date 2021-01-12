@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\positive_integers;
+use App\Rules\difficulty;
 
 class CreateMission extends FormRequest
 {
@@ -26,13 +27,15 @@ class CreateMission extends FormRequest
     {
         return [
             'name' => 'required|max:20|min:1', //文字がゼロ個はエラーにする
-            'time' => ['required', new positive_integers]//負の数はエラー
+            'time' => ['required', new positive_integers],//負の数はエラー
+            'difficulty' => ['required', new difficulty]//負の数はエラー
         ];
     }
     public function attributes(){
         return [
             'name' => '「ミッション名」',
-            'time' => '「もらえる時間」'
+            'time' => '「もらえる時間」',
+            'difficulty' => '「むずかしさ」',
         ];
     }
 
