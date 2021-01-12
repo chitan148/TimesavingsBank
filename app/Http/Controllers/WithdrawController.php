@@ -8,13 +8,14 @@ use App\Trade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\WithdrawTime;//フォームリクエスト
 
 class WithdrawController extends Controller
 {
     public function index(UserDetail $user_detail){
         return view('withdraw/index', ['user_detail_id' => $user_detail->id]);
     }
-    public function confirm(UserDetail $user_detail, Request $request){
+    public function confirm(UserDetail $user_detail, WithdrawTime $request){
         
         //'withdraw_time'のキーがついたものだけ取り出す
         $withdraw_time = $request->input('withdraw_time');
