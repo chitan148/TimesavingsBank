@@ -48,14 +48,15 @@ class WithdrawController extends Controller
         if ($validator->fails()) {
         
             //エラー時の処理
-            $comment = $request -> input('comment');
-            $withdraw_time = $request -> input('withdraw_time');
+            // $comment = $request -> input('comment');
+            // $withdraw_time = $request -> input('withdraw_time');
             
-            return view('withdraw/confirm', [
-                'withdraw_time' => $withdraw_time,
-                'comment' => $comment,
-                'user_detail_id' => $user_detail->id
-            ])-> withErrors($validator);
+            // return view('withdraw/confirm', [
+            //     'withdraw_time' => $withdraw_time,
+            //     'comment' => $comment,
+            //     'user_detail_id' => $user_detail->id
+            // ])-> withErrors($validator);
+            return redirect('withdraw/confirm')->withErrors($validator)->withInput();
         } 
 
         //名前
