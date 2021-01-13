@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\WithdrawTime;//フォームリクエスト
+use Validator;//バリデータ―
 
 class WithdrawController extends Controller
 {
@@ -31,9 +32,31 @@ class WithdrawController extends Controller
     public function result(UserDetail $user_detail, Request $request){
         
         //バリデーション
-        $validatedData = $request->validate([
-             'comment' => 'max:50'
-        ]);
+        // $validatedData = $request->validate([
+        //      'comment' => 'max:50'
+        // ]);
+
+        //バリデーション
+        $validator = Validator::make($request->all(), [
+                'comment' => 'max:50'
+            ],
+            [
+                'comment.max' => 'コメントは50文字以内で入力してください'
+            ]
+        );
+    
+        if ($validator->fails()) {
+        
+            //エラー時の処理
+            $comment = $request -> input('comment');
+            $withdraw_time = $request -> input('withdraw_time');
+            
+            return view('withdraw/confirm', [
+                'withdraw_time' => $withdraw_time,
+                'comment' => $comment,
+                'user_detail_id' => $user_detail->id
+            ])-> withErrors($validator);
+        } 
 
         //名前
         $user_name = $user_detail->name;
