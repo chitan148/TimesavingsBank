@@ -29,6 +29,12 @@ class WithdrawController extends Controller
     }
 
     public function result(UserDetail $user_detail, Request $request){
+        
+        //バリデーション
+        $validatedData = $request->validate([
+             'comment' => 'max:50'
+        ]);
+
         //名前
         $user_name = $user_detail->name;
         //セッションから出刻時間を取得

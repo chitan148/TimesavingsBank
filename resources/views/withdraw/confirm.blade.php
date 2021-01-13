@@ -1,6 +1,15 @@
 @extends('layouts.basic')
 
 @section('content')
+
+@if($errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $message)
+            <p>{{ $message }}</p>
+        @endforeach
+    </div>
+@endif
+
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 offset-lg-2 blue">
