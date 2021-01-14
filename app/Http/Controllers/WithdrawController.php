@@ -29,18 +29,18 @@ class WithdrawController extends Controller
         ]);
     }
 
-    public function redirect_confirm(UserDetail $user_detail
-    // ,WithdrawTime $request
-    ){
-        // //'withdraw_time'のキーがついたものだけ取り出す
-        // $withdraw_time = $request->input('withdraw_time');
-        // //sessionに出刻時間を格納
-        // session(['withdraw_time' => $withdraw_time]);
+    // public function redirect_confirm(UserDetail $user_detail
+    // // ,WithdrawTime $request
+    // ){
+    //     // //'withdraw_time'のキーがついたものだけ取り出す
+    //     // $withdraw_time = $request->input('withdraw_time');
+    //     // //sessionに出刻時間を格納
+    //     // session(['withdraw_time' => $withdraw_time]);
         
-        return view('withdraw/confirm', [
-            'user_detail_id' => $user_detail->id
-        ]);   
-    }
+    //     return view('withdraw/confirm', [
+    //         'user_detail_id' => $user_detail->id
+    //     ]);   
+    // }
 
     public function result(UserDetail $user_detail, Request $request){
         
