@@ -29,10 +29,23 @@ class WithdrawController extends Controller
         ]);
     }
 
+    public function redirect_confirm(UserDetail $user_detail
+    // ,WithdrawTime $request
+    ){
+        // //'withdraw_time'のキーがついたものだけ取り出す
+        // $withdraw_time = $request->input('withdraw_time');
+        // //sessionに出刻時間を格納
+        // session(['withdraw_time' => $withdraw_time]);
+        
+        return view('withdraw/confirm', [
+            'user_detail_id' => $user_detail->id
+        ]);   
+    }
+
     public function result(UserDetail $user_detail, Request $request){
         
         //バリデーション
-        // $validatedData = $request->validate([
+        // $request->validate([
         //      'comment' => 'max:50'
         // ]);
 
@@ -48,16 +61,15 @@ class WithdrawController extends Controller
         if ($validator->fails()) {
         
             //エラー時の処理
-            // $comment = $request -> input('comment');
-            // $withdraw_time = $request -> input('withdraw_time');
+            $comment = $request -> input('comment');
+            $withdraw_time = session('withdraw_time');
             
-            // return view('withdraw/confirm', [
-            //     'withdraw_time' => $withdraw_time,
-            //     'comment' => $comment,
-            //     'user_detail_id' => $user_detail->id
-            // ])-> withErrors($validator);
-            return redirect('withdraw/confirm')->withErrors($validator)->withInput();
-        } 
+            return view('withdraw/confirm', [
+                'withdraw_time' => $withdraw_time,
+                'comment' => $comment,
+                'user_detail_id' => $user_detail->id
+            ])-> withErrors($validator);
+        } else {
 
         //名前
         $user_name = $user_detail->name;
@@ -67,7 +79,7 @@ class WithdrawController extends Controller
         $comment = $request->input('comment');
         if($comment === null ){
             $comment = '';
-        }
+        } 
         
         //所有時間情報を計算して更新。
         //$saving_old_timeは今まで所有していた時間。
@@ -120,6 +132,7 @@ class WithdrawController extends Controller
                 'user_detail_id' => $user_detail->id
             ]);
         }
+    }
         
     }
 }
