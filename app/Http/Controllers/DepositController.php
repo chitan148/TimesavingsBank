@@ -93,6 +93,9 @@ class DepositController extends Controller
 
         if ($validator->fails()) {
             
+            //リクエストからコメントをもらう
+            $comment = $request -> input('comment');
+            
             //セッションから総計とデータパック配列を取得
             $gland_total = session('gland_total');
             $missions = session('missions');
@@ -102,7 +105,8 @@ class DepositController extends Controller
                 [
                     'missions' => $missions, 
                     'gland_total' => $gland_total, 
-                    'user_detail_id' => $user_detail->id
+                    'user_detail_id' => $user_detail->id,
+                    'comment' => $comment
                 ]
             )-> withErrors($validator); 
         }
