@@ -69,7 +69,7 @@ class WithdrawController extends Controller
                 'comment' => $comment,
                 'user_detail_id' => $user_detail->id
             ])-> withErrors($validator);
-        } else {
+        } 
 
         //名前
         $user_name = $user_detail->name;
@@ -131,8 +131,6 @@ class WithdrawController extends Controller
                 'comment' => $comment,
                 'user_detail_id' => $user_detail->id
             ]);
-        }
-    }
-        
+        }    
     }
 }
