@@ -48,7 +48,7 @@ class DepositController extends Controller
         //$var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
         foreach($mission_ids as $mission_id => $deposit_count){
-            if(ctype_digit($deposit_count) === true){
+            if(ctype_digit($deposit_count) === true && empty($deposit_count) !== true){
                 //ミッションの情報をモデル(DB)からもらう
                 $mission_info = Mission::find($mission_id);
                 $time = $mission_info->time;
