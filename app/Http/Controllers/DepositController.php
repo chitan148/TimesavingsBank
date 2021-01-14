@@ -10,6 +10,7 @@ use App\TradeDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Validator;//バリデータ―
 
 class DepositController extends Controller
 {
@@ -81,6 +82,31 @@ class DepositController extends Controller
     }
     
     public function result(UserDetail $user_detail, Request $request){
+
+        $validator = Validator::make($request->all(), [
+                'comment' => 'max:50'
+            ],
+            [
+                'comment.max' => 'コメントは50文字以内で入力してください'
+            ]
+        );
+
+        if ($validator->fails()) {
+            
+            //セッションから総計とデータパック配列を取得
+            $gland_total = session('gland_total');
+            $missions = session('missions');
+            
+
+            return view('deposit.confirm', 
+                [
+                    'missions' => $missions, 
+                    'gland_total' => $gland_total, 
+                    'user_detail_id' => $user_detail->id
+                ]
+            )-> withErrors($validator); 
+        }
+
         //とりあえず名前
         $user_name = $user_detail->name;
         //セッションから総計とデータパック配列を取得
