@@ -21,7 +21,7 @@
             <form method="post" action= "{{ route('withdraw.result', ['user_detail' => $user_detail_id]) }}" >
                 @csrf
                 <div class="form-group">
-                    <label for="comment">ひとことコメント(無記入可)</label><br>
+                    <label for="comment">ひとことコメント(無記入可/50文字以内)</label><br>
                     <textarea id="comment" name="comment" class="form-control font-default">
                         @isset($comment)
                             {{ $comment }}
