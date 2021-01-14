@@ -64,7 +64,7 @@ class WithdrawController extends Controller
             $comment = $request -> input('comment');
             $withdraw_time = session('withdraw_time');
             
-            return view('withdraw/confirm', [
+            return view('withdraw.confirm', [
                 'withdraw_time' => $withdraw_time,
                 'comment' => $comment,
                 'user_detail_id' => $user_detail->id
