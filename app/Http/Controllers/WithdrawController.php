@@ -71,8 +71,8 @@ class WithdrawController extends Controller
             // ])-> withErrors($validator);
 
             return redirect()->route('withdraw.index',['user_detail' => $user_detail->id])
-                ->withErrors($validator);
-                // ->with('withdraw_time',$withdraw_time);
+                ->withErrors($validator)
+                ->with('withdraw_time',$withdraw_time);
         } 
 
         //名前
