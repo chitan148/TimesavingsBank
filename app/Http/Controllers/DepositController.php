@@ -93,22 +93,24 @@ class DepositController extends Controller
 
         if ($validator->fails()) {
             
-            //リクエストからコメントをもらう
-            $comment = $request -> input('comment');
+            // //リクエストからコメントをもらう
+            // $comment = $request -> input('comment');
             
-            //セッションから総計とデータパック配列を取得
-            $gland_total = session('gland_total');
-            $missions = session('missions');
+            // //セッションから総計とデータパック配列を取得
+            // $gland_total = session('gland_total');
+            // $missions = session('missions');
             
 
-            return view('deposit.confirm', 
-                [
-                    'missions' => $missions, 
-                    'gland_total' => $gland_total, 
-                    'user_detail_id' => $user_detail->id,
-                    'comment' => $comment
-                ]
-            )-> withErrors($validator); 
+            // return view('deposit.confirm', 
+            //     [
+            //         'missions' => $missions, 
+            //         'gland_total' => $gland_total, 
+            //         'user_detail_id' => $user_detail->id,
+            //         'comment' => $comment
+            //     ]
+            // )-> withErrors($validator); 
+            return redirect()->route('deposit.index',['user_detail' => $user_detail->id])
+                ->withErrors($validator);
         }
 
         //とりあえず名前
