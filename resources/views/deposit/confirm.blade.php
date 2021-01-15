@@ -32,11 +32,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="comment">ひとことコメント(無記入可/50文字以内)</label><br>
-                    <textarea id="comment" name="comment" class="form-control font-default">
-                        @isset($comment)
-                            {{ $comment }}
-                        @endisset
-                    </textarea>
+                    <textarea id="comment" name="comment" class="form-control font-default" maxlength="50"></textarea>
                     <input type="submit" value="送信" class="btn-lg">
                 </div>
             </form> 
