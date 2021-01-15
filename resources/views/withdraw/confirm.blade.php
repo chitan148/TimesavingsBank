@@ -22,7 +22,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="comment">ひとことコメント(無記入可/50文字以内)</label><br>
-                    <textarea id="comment" name="comment" class="form-control font-default"></textarea>
+                    <textarea id="comment" name="comment" class="form-control font-default" maxlength="50"></textarea>
                     <input type="submit" value="確認" class="btn-lg">
                 </div>
             </form>
