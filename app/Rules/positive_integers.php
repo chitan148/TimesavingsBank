@@ -25,7 +25,7 @@ class positive_integers implements Rule
      */
     public function passes($attribute, $value)
     {
-        return ctype_digit($value) === true;
+        return ctype_digit($value) === true && empty($value) !==true;
     }
 
     /**
@@ -35,6 +35,6 @@ class positive_integers implements Rule
      */
     public function message()
     {
-        return ':attribute には、正の数だけ入れてください';
+        return ':attribute には、0とマイナスは入力できません';
     }
 }
