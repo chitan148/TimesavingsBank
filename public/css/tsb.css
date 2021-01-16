@@ -1,0 +1,257 @@
+* {
+    font-family: 'AP';
+}
+html { 
+    font-size: 62.5%; 
+}
+.container {
+    margin-bottom: 15px;
+}
+.my-navbar {
+    align-items: center;
+    background: #996600;
+    display: flex;
+    height: 6rem;
+    justify-content: space-between;
+    padding: 0 2%;
+    margin-bottom: 3rem;
+    font-size:3rem;
+    color: white;
+}
+
+.my-navbar_home {
+    align-items: center;
+    background: #996600;
+    display: flex;
+    height: 6rem;
+    justify-content: space-between;
+    padding: 0 2%;
+    /* margin-bottom: 3rem; */
+    font-size:3rem;
+    color: white;
+}
+
+.my-navbar-brand,
+.my-navbar-item {
+  color: #c4b46d;
+}
+
+.my-navbar-brand:hover,
+a.my-navbar-item:hover {
+  color: #ffffff;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align:center;  
+}
+
+.card{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-header{
+    font-size: 2rem;
+    padding-bottom: 0;
+}
+.deposit_color{
+    background: #fceff4;
+}
+.withdraw_color{
+    background: #cbe7f8;
+}
+.mission_record{
+    background: #fceff4;
+    height: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.mission_record p{
+    margin-bottom: 0;
+}
+
+.font-default{
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 1.75rem;
+}
+
+.purple{
+    background: #e6e6fa;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.light-blue{
+    background: #dbeefa;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.pink{
+    background: #fceff4;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.pink-sm{
+    background: #fceff4;
+    height: 100%;
+    width: 45%;
+    margin-left:1rem;
+    display: inline-block;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+.deposit-amount{
+    text-align: left;
+}
+.deposit-time{
+    text-align: right;
+}
+.outcome-wrapper{
+    margin: 3rem 0;
+    border-bottom: double 0.5rem #9b9a9a;
+}
+.blue{
+    background: #cbe7f8;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+.key-visual {
+    height: 700px;
+    /* cssでpublicの画像を読み込むときはasset要らないらしいよ　最初に/をつける。 */
+    background-image: url('/image/cork_board.jpg'); 
+    background-size: cover;
+    position: relative;
+}
+
+.key-picture{
+    display: block;
+    width: 70%;
+    height: 500px;
+    margin: 2rem auto;
+}
+
+.guide-wrapper{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.guide-wrapper button{
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+  
+
+.guide-wrapper img{
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 50px;
+  }
+
+.yellow{
+    background: #f7f1bf;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.green{
+    background: #cbebd7;
+    height: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.white {
+    background: #ffffff;
+    height: 100%;
+    text-align: left;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+.record_wrapper{
+    text-decoration: none;
+    display: inline-block;
+}
+
+@font-face {
+	font-family: 'AP';
+	src: url('/fonts/AP.ttf');
+}
+.Anzu {
+    font-family: 'AP';
+}
+
+.btn-lg {
+    margin: 2rem 0 2rem 0;
+    padding: 0.2rem;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+}
+.btn-lg:hover {
+    color: #d2e1f0;
+    text-decoration: underline;
+}
+.btn-lg-bottom{
+    margin: 2rem 0 6rem 0;
+}
+
+.input-sm{
+    width: 30%;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+
+.alert-success {
+    color: #1d643b;
+    background-color: #d7f3e3;
+    border-color: #c7eed8;
+  }
+
+.alert-warning {
+  color: #857b26;
+  background-color: #fffbdb;
+  border-color: #fffacc;
+}
+   
+/* .no-gutters　> .col,
+.no-gutters　> [class*="col-"] {
+  margin:0;
+  padding:0;
+} 
+html（blade）側でimgをcol間のmarginやpaddingを０にして表示させるクラスっぽいので、
+今回はcss側（background-image）で読み込んでいるので不要
+*/

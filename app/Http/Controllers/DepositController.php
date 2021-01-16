@@ -17,14 +17,20 @@ class DepositController extends Controller
         //ログインしているユーザーの$user_detailに紐づくmissionsを取得
         $missions = $user_detail->missions()->get();
         //missionの数を数える　
-        $count = $missions->count();         
+        $count = $missions->count();//mission未作成の場合はint型の0が入っている。
+        
+        //未作成の場合はミッション作成画面にリダイレクト
+        if($count === 0){
+            return redirect()->route('missions.create',['user_detail' => $user_detail->id])->with('my_status',('先にミッションを作成しましょう')); 
+        
+        } else {
 
-        //viewに渡します
-        return view('deposit.index', [
-            'missions' => $missions,
-            'count' => $count,
-            'user_detail_id' => $user_detail->id
-        ]);
+            return view('deposit.index', [
+                'missions' => $missions,
+                'count' => $count,
+                'user_detail_id' => $user_detail->id,
+            ]);
+        }
    }
    public function confirm(UserDetail $user_detail, Request $request){
         //'mission_id'のキーがついたものだけ取り出す
@@ -87,8 +93,11 @@ class DepositController extends Controller
         //総計　を足し算して　代入（更新）
         $saving_time = $saving_old_time + $gland_total;
         
-        //コメントもとってきてみる
+        //コメントもとってきてみる　null(入力無し)の時は空文字を入れる。
         $comment = $request->input('comment');
+        if($comment === null ){
+            $comment = '';
+        }
 
         //トランザクション開始
         DB::transaction(function () use(

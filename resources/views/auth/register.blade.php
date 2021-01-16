@@ -2,27 +2,33 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+    <div class="row">
+        <div class=" col-lg-8 offset-lg-2 purple">
+            <h1>お客様情報のご入力</h1>
+            <form method="POST" action="{{ route('register') }}">
+                @csrf    
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="text" class="form-control font-default" id="email" name="email" tabindex="1">  
+                </div>
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" class="form-control font-default" id="name"  name="name" tabindex="2">
+                </div>
+                <div class="form-group">
+                    <label for="password">パスワード(8文字以上）</label>
+                    <input type="password" class="form-control font-default" id="password" name="password" tabindex="3">
+                </div>
+                <div class="form-group">
+                    <label for="password-confirm">パスワード（確認）</label>
+                    <input type="password" class="form-control font-default" id="password-confirm" name="password_confirmation" tabindex="4">   
+                </div>
+                <p>性別</p>
+                <div class="form-group">
+                    @foreach(\App\UserDetail::GENDERS as $key => $value)
+                        <div class="form-check form-check-inline">    
+                            <input type="radio" class="form-check-input" id="gender" name="gender" value="{{$key}}">  
+                            <label for="gender" class="form-check-label">{{$value}}</label>   
                         </div>
 
                         <div class="form-group row">
