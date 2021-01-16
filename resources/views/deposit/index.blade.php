@@ -2,6 +2,14 @@
 
 @section('content')
 
+@if (session('deposit_count_error'))
+    <div class="container mt-2">
+        <div class="alert alert-danger">
+            {{ session('deposit_count_error') }}
+        </div>
+    </div>
+@endif
+
 @if($errors->any())
     <div class="alert alert-danger">
         @foreach($errors->all() as $message)
