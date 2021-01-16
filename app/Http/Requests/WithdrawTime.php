@@ -25,7 +25,7 @@ class WithdrawTime extends FormRequest
     public function rules()
     {
         return [
-            'withdraw_time' => ['required', new positive_integers]//負の数はエラー
+            'withdraw_time' => ['required', new positive_integers]//0及び負の数はエラー
         ];
     }
     public function attributes(){
