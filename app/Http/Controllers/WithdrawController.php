@@ -28,8 +28,6 @@ class WithdrawController extends Controller
     }
 
     public function result(UserDetail $user_detail, Request $request){
-        //名前
-        $user_name = $user_detail->name;
         //セッションから出刻時間を取得
         $withdraw_time = session('withdraw_time');
         //リクエストからコメントを取得。null(入力無し)の時は空文字を入れる。
