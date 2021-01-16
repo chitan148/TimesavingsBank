@@ -10,6 +10,7 @@ use App\TradeDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Validator;//バリデータ―
 
 class DepositController extends Controller
 {
@@ -46,8 +47,14 @@ class DepositController extends Controller
         
         //$var = 12;
         //$deposit_countは、ユーザーが入力したミッションの回数
+        // $valid_countは、有効なもの(ifルート）の数を数える
+        $valid_count = 0;
         foreach($mission_ids as $mission_id => $deposit_count){
-            if(ctype_digit($deposit_count) === true){
+            if(ctype_digit($deposit_count) === true && empty($deposit_count) !== true){
+                
+                //有効をカウント
+                $valid_count++;
+                
                 //ミッションの情報をモデル(DB)からもらう
                 $mission_info = Mission::find($mission_id);
                 $time = $mission_info->time;
@@ -72,6 +79,10 @@ class DepositController extends Controller
                 $subtotal = 0;
             }
         }
+        if($valid_count === 0){
+            return redirect()->route('deposit.index',['user_detail' => $user_detail->id])
+                ->with('deposit_count_error', '入力された回数は無効です。全てがゼロまたはマイナスの場合は無効になります。');
+        }
         //$dump = var_dump($missions);
         //sessionに総計とデータパック配列を格納
         session(['gland_total' => $gland_total]);
@@ -81,6 +92,37 @@ class DepositController extends Controller
     }
     
     public function result(UserDetail $user_detail, Request $request){
+
+        $validator = Validator::make($request->all(), [
+                'comment' => 'max:50'
+            ],
+            [
+                'comment.max' => 'コメントは50文字以内で入力してください'
+            ]
+        );
+
+        if ($validator->fails()) {
+            
+            // //リクエストからコメントをもらう
+            // $comment = $request -> input('comment');
+            
+            // //セッションから総計とデータパック配列を取得
+            // $gland_total = session('gland_total');
+            // $missions = session('missions');
+            
+
+            // return view('deposit.confirm', 
+            //     [
+            //         'missions' => $missions, 
+            //         'gland_total' => $gland_total, 
+            //         'user_detail_id' => $user_detail->id,
+            //         'comment' => $comment
+            //     ]
+            // )-> withErrors($validator); 
+            return redirect()->route('deposit.index',['user_detail' => $user_detail->id])
+                ->withErrors($validator);
+        }
+
         //とりあえず名前
         $user_name = $user_detail->name;
         //セッションから総計とデータパック配列を取得

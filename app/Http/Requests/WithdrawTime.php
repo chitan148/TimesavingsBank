@@ -4,9 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\positive_integers;
-use App\Rules\difficulty;
 
-class CreateMission extends FormRequest
+class WithdrawTime extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,16 +25,12 @@ class CreateMission extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:30|min:1', //文字がゼロ個以下または30個以上はエラーにする
-            'time' => ['required', new positive_integers],//負の数はエラー
-            'difficulty' => ['required', new difficulty]//１~５でないものはエラー
+            'withdraw_time' => ['required', new positive_integers]//0及び負の数はエラー
         ];
     }
     public function attributes(){
         return [
-            'name' => '「ミッション名」',
-            'time' => '「もらえる時間」',
-            'difficulty' => '「むずかしさ」',
+            'withdraw_time' => '「使った時間」',
         ];
     }
 }

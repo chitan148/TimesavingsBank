@@ -5,6 +5,13 @@
     <div class="row">
         <div class=" col-lg-8 offset-lg-2 purple">
             <h1>お客様情報のご入力</h1>
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $message)
+                            <p>{{ $message }}</p>
+                        @endforeach
+                    </div>
+                @endif
             <form method="POST" action="{{ route('register') }}">
                 @csrf    
                 <div class="form-group">

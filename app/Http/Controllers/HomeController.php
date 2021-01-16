@@ -29,9 +29,16 @@ class HomeController extends Controller
     // } 
     public function index()
     {
-        //ログインユーザーを取得して、リンクに使うuser_detailsテーブルのidをviewに渡す
-        $user = Auth::user();
-        return view('home', ['user_detail_id' => $user->user_detail->id]);
+        if (Auth::check()) {
+            //ログインできていたら、ログインユーザーを取得して、リンクに使うuser_detailsテーブルのidをviewに渡す
+            $user = Auth::user();
+            return view('home', ['user_detail_id' => $user->user_detail->id,]);
+       
+        } else {
+            //出来ていなかったら、ログイン画面を表示
+            return view('auth.login');
+        }
+        
            
     }
 }
