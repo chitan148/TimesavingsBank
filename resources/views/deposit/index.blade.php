@@ -1,6 +1,23 @@
 @extends('layouts.basic')
 
 @section('content')
+
+@if (session('deposit_count_error'))
+    <div class="container mt-2">
+        <div class="alert alert-danger">
+            {{ session('deposit_count_error') }}
+        </div>
+    </div>
+@endif
+
+@if($errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $message)
+            <p>{{ $message }}</p>
+        @endforeach
+    </div>
+@endif
+
 <div class="container">
 	<div class="row">
 		<div class="col">

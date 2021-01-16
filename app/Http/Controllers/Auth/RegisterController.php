@@ -56,6 +56,10 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ],[],[
+            'name' => 'お名前',
+            'email' => 'メールアドレス',
+            'password' => 'パスワード',
         ]);
     }
 
@@ -96,7 +100,7 @@ class RegisterController extends Controller
     protected function registered(Request $request, $user)
     {
         // 登録したらメッセージを表示
-        return redirect('home', ['user_detail' => $user->$user_detail->id ])->with('my_status',
+        return redirect('home', ['user_detail' => $user->user_detail->id ])->with('my_status',
             ('登録されました') 
         );
     }
