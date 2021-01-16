@@ -127,7 +127,7 @@ class DepositController extends Controller
         $user_name = $user_detail->name;
         //セッションから総計とデータパック配列を取得
         $gland_total = session('gland_total');
-        $datas = session('missions');
+        $missions = session('missions');
         
         //最新の所有時間情報を作る。
         //$saving_old_timeは今まで所有していた時間。
@@ -141,49 +141,39 @@ class DepositController extends Controller
             $comment = '';
         }
 
-        //取引タイプへdepositを示す1を代入
-        $type = 1;
-
         //トランザクション開始
         DB::transaction(function () use(
             $user_detail,
             $saving_time,
             $gland_total,
             $comment,
-            $type,
-            $datas) 
+            $missions) 
             {
                 //計算後の所有時間を記録　user_detailsテーブルの更新処理
                 $user_detail->saving_time = $saving_time;
                 $user_detail->save();
         
                 //取引の記録をつける　tradesテーブルの新規作成処理
-                //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメント、タイプにタイプをinsert
+                //取引量に総計、取引時点で所有時間 に 最新所有時間、コメントにコメントをinsert
                 $trade = new Trade;
                 $trade->trading_time = $gland_total;
                 $trade->time_save_now = $saving_time;
                 $trade->comment = $comment;
-                $trade->type = $type;
                 //$user_detailsテーブルと紐づける
                 $user_detail->trades()->save($trade);
 
                 //trade_detailsの処理
-                foreach($datas as $data){
+                foreach($missions as $mission){
                     $detail = new TradeDetail;
-                    $detail->mission_id = $data['mission_id'];
-                    //$mission = Mission::find($data['mission_id']);
+                    $detail->mission_id = $mission['mission_id'];
                     //$test = $mission['deposit_count'];
                     //$test = var_dump($test);
-                    $detail->mission_count = $data['deposit_count'];
+                    $detail->mission_count = $mission['deposit_count'];
                     $detail->trade_id = $trade->id;
-                    $detail->save();
-                    //$mission->tradeDetails()->save($detail);    
+                    $detail->save();    
                 }
             }
         );
-
-        //リロード対策　トークン再発行　ページ編集後コメントアウトを消す。
-        // $request->session()->regenerateToken();
         
         return view('deposit.result', [
             'user_name' => $user_name,
