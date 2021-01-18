@@ -45,8 +45,8 @@
                 <div class="col-lg-2">
                     <img src="image/clock.png">
                 </div>
-                <div class="col-lg-8"></div>
-                <div class="col-lg-2">
+                <div class="col-lg-7"></div>
+                <div class="col-lg-3">
                     <img src="image/turtle-girl.png">
                 </div>
             </div>
