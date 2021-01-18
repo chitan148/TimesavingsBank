@@ -42,6 +42,6 @@ class Mission extends Model
         return self::GROUP[$group]['image'];
     }
     public function tradeDetails(){
-        return $this->hasMany('App\TradeDetails');
+        return $this->hasMany('App\TradeDetail');
     }
 }
