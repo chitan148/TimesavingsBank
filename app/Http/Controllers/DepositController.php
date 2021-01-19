@@ -17,7 +17,7 @@ class DepositController extends Controller
    public function index(UserDetail $user_detail){
 
         //権限のメソッド
-        $this->authorize('viewAuthority', $user_detail); 
+        // $this->authorize('viewAuthority', $user_detail); 
         
         //ログインしているユーザーの$user_detailに紐づくmissionsを取得
         $missions = $user_detail->missions()->get();
