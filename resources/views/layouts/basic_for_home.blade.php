@@ -8,7 +8,7 @@
     @yield('styles')
     <link rel="stylesheet" href="{{ asset('/css/ress.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('/css/tsb.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/tsb.css') }}">    
 </head>
 <body>
     <header>
@@ -28,6 +28,19 @@
             </div>
         </nav>
     </header>
+    <script>
+
+        var img = document.getElementById('m_tape');
+        function over() {
+           m_tape.setAttribute('src', 'image/m_tape_pink.png');
+        }
+        function leave() {
+           m_tape.setAttribute('src', 'image/m_tape_yellow.png');
+        }
+        m_tape.onmouseover = over();
+        m_tape.onmouseleave = leave();
+    
+    </script>
     <main>
         @if(Auth::check())
             <script>
