@@ -91,7 +91,7 @@
         @yield('content')
     </main>
     {{-- @yield('scripts') js最後まで使わなかったら削除 --}}
-    <script>
+    <!-- <script>
         const img = document.getElementById('m_tape');
 
         let src = img.getAttribute('src');
@@ -106,6 +106,20 @@
 
         img.addEventListener('onmouseover',over);
         img.addEventListener('onmouseleave',leave);
+
+    </script> -->
+    <script>
+        const img = document.getElementById('m_tape');
+        let src = img.getAttribute('src');
+        
+        function over() {
+            img.setAttribute('src', 'image/m_tape_pink.png');
+        }
+        function leave() {
+            img.setAttribute('src', 'image/m_tape_yellow.png');
+        }
+        img.onmouseover = over;
+        img.onmouseleave = leave;
 
     </script>
 </body>
