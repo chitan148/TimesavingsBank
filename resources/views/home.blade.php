@@ -19,9 +19,9 @@
             <div class="row">
                 <div class="col-lg-8 offset-2 guide-wrapper">    
                     <button><img id="m_tape" src="{{ asset('image/m_tape_yellow.png') }}" ></button>
-                    <button><img src="{{ asset('image/m_tape_pink.png') }}"></button>
-                    <button><img src="{{ asset('image/m_tape_blue.png') }}"></button>
-                    <button><img src="{{ asset('image/m_tape_green.png') }}"></button>
+                    <button><img id="m_tape" src="{{ asset('image/m_tape_yellow.png') }}"></button>
+                    <button><img id="m_tape" src="{{ asset('image/m_tape_yellow.png') }}"></button>
+                    <button><img id="m_tape" src="{{ asset('image/m_tape_yellow.png') }}"></button>
                     <a href="{{ route('missions.create', ['user_detail' => $user_detail_id]) }}">つくる</a>
                     <a href="{{ route('deposit.index', ['user_detail' => $user_detail_id]) }}">ためる</a>
                     <a href="{{ route('withdraw.index', ['user_detail' => $user_detail_id]) }}">つかう</a>
