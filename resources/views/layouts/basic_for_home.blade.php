@@ -92,7 +92,41 @@
     </main>
     {{-- @yield('scripts') js最後まで使わなかったら削除 --}}
     
-    <script>
+    <!-- <script>
+        //黄色 →　青　
+        const imgY = document.getElementById('tape_y');
+
+        let src = img.getAttribute('src');
+
+        function over(){
+            imgY.setAttribute('src','image/m_tape_blue.png');
+        }       
+
+        function leave(){
+            imgY.setAttribute('src', 'image/m_tape_yellow.png');
+        }       
+
+        imgY.addEventListener('mouseover',over);
+        imgY.addEventListener('mouseleave',leave);
+
+        //ピンク →　緑
+        const imgP = document.getElementById('tape_p');
+
+        let src = imgP.getAttribute('src');
+
+        function over(){
+            imgP.setAttribute('src','image/m_tape_green.png');
+        }       
+
+        function leave(){
+            imgP.setAttribute('src', 'image/m_tape_pink.png');
+        }       
+
+        imgP.addEventListener('mouseover',over);
+        imgP.addEventListener('mouseleave',leave);
+
+    </script> -->
+    <!--<script>
         const img = document.getElementById('m_tape');
 
         let src = img.getAttribute('src');
@@ -109,7 +143,7 @@
         img.addEventListener('mouseleave',leave);
 
     </script>
-    <!-- <script>
+    <script>
         const img = document.getElementById('m_tape');
         let src = img.getAttribute('src');
         
