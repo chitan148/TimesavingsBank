@@ -92,40 +92,72 @@
     </main>
     {{-- @yield('scripts') js最後まで使わなかったら削除 --}}
     
-    <!-- <script>
+    <script>
         //黄色 →　青　
         const imgY = document.getElementById('tape_y');
 
-        let src = img.getAttribute('src');
+        // let src = imgY.getAttribute('src');
 
-        function over(){
+        function overY(){
             imgY.setAttribute('src','image/m_tape_blue.png');
         }       
 
-        function leave(){
+        function leaveY(){
             imgY.setAttribute('src', 'image/m_tape_yellow.png');
         }       
 
-        imgY.addEventListener('mouseover',over);
-        imgY.addEventListener('mouseleave',leave);
+        imgY.addEventListener('mouseover',overY);
+        imgY.addEventListener('mouseleave',leaveY);
 
-        //ピンク →　緑
+        //ピンク→緑
         const imgP = document.getElementById('tape_p');
 
-        let src = imgP.getAttribute('src');
+        // let src = imgP.getAttribute('src');
 
-        function over(){
+        function overP(){
             imgP.setAttribute('src','image/m_tape_green.png');
         }       
 
-        function leave(){
+        function leaveP(){
             imgP.setAttribute('src', 'image/m_tape_pink.png');
         }       
 
-        imgP.addEventListener('mouseover',over);
-        imgP.addEventListener('mouseleave',leave);
+        imgP.addEventListener('mouseover',overP);
+        imgP.addEventListener('mouseleave',leaveP);
 
-    </script> -->
+        //青 →　黄色　
+        const imgB = document.getElementById('tape_b');
+
+        // let src = imgY.getAttribute('src');
+
+        function overB(){
+            imgB.setAttribute('src','image/m_tape_yellow.png');
+        }       
+
+        function leaveB(){
+            imgB.setAttribute('src', 'image/m_tape_blue.png');
+        }       
+
+        imgB.addEventListener('mouseover',overB);
+        imgB.addEventListener('mouseleave',leaveB);
+
+        //緑→ピンク
+        const imgG = document.getElementById('tape_g');
+
+        // let src = imgP.getAttribute('src');
+
+        function overG(){
+            imgG.setAttribute('src','image/m_tape_pink.png');
+        }       
+
+        function leaveG(){
+            imgG.setAttribute('src', 'image/m_tape_green.png');
+        }       
+
+        imgG.addEventListener('mouseover',overG);
+        imgG.addEventListener('mouseleave',leaveG);
+
+    </script>
     <!--<script>
         const img = document.getElementById('m_tape');
 
