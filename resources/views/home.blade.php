@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-2 guide-wrapper">    
-                    <button><img id="tape_y" src="{{ asset('image/m_tape_yellow_test2.png') }}"></button>
+                    <button><img id="tape_y" src="{{ asset('image/m_tape_yellow_default.png') }}"></button>
                     <button><img id="tape_p" src="{{ asset('image/m_tape_pink.png') }}"></button>
                     <button><img id="tape_b" src="{{ asset('image/m_tape_blue.png') }}"></button>
                     <button><img id="tape_g" src="{{ asset('image/m_tape_green.png') }}"></button>
