@@ -70,11 +70,11 @@
     // let src = imgP.getAttribute('src');
 
     function overP(){
-        imgP.setAttribute('src','image/m_tape_green.png');
+        imgP.setAttribute('src','image/m_tape_pink_over.png');
     }       
 
     function leaveP(){
-        imgP.setAttribute('src', 'image/m_tape_pink.png');
+        imgP.setAttribute('src', 'image/m_tape_pink_default.png');
     }       
 
     imgP.addEventListener('mouseover',overP);
@@ -102,7 +102,7 @@
     // let src = imgP.getAttribute('src');
 
     function overG(){
-        imgG.setAttribute('src','image/m_tape_pink.png');
+        imgG.setAttribute('src','image/m_tape_pink_over.png');
     }       
 
     function leaveG(){
