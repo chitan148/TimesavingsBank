@@ -49,16 +49,16 @@
 
 
 
-    //黄色 →　青　
+    //黄色　
     const imgY = document.getElementById('tape_y')
     // let src = imgY.getAttribute('src');
 
     function overY(){
-        imgY.setAttribute('src','image/m_tape_blue.png');
+        imgY.setAttribute('src','image/m_tape_yellow_over.png');
     }       
 
     function leaveY(){
-        imgY.setAttribute('src', 'image/m_tape_yellow_test2.png');
+        imgY.setAttribute('src', 'image/m_tape_yellow_default.png');
     }       
 
     imgY.addEventListener('mouseover',overY);
@@ -86,7 +86,7 @@
     // let src = imgY.getAttribute('src');
 
     function overB(){
-        imgB.setAttribute('src','image/m_tape_yellow_test2.png');
+        imgB.setAttribute('src','image/m_tape_yellow_over.png');
     }       
 
     function leaveB(){
