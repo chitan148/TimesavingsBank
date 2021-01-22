@@ -58,7 +58,7 @@
     }       
 
     function leaveY(){
-        imgY.setAttribute('src', 'image/m_tape_yellow.png');
+        imgY.setAttribute('src', 'image/m_tape_yellow_test2.png');
     }       
 
     imgY.addEventListener('mouseover',overY);
@@ -86,7 +86,7 @@
     // let src = imgY.getAttribute('src');
 
     function overB(){
-        imgB.setAttribute('src','image/m_tape_yellow.png');
+        imgB.setAttribute('src','image/m_tape_yellow_test2.png');
     }       
 
     function leaveB(){
