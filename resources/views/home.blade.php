@@ -32,3 +32,7 @@
     </div>
 </div>
 @endsection
+
+@section('scripts')
+    @include('share.eventlistener.scripts') <!--share/eventlistener/scripts.blade.phpを読み込み-->
+@endsection
