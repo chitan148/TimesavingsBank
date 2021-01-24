@@ -50,67 +50,58 @@
 
 
     //黄色　
-    const imgY = document.getElementById('tape_y')
-    // let src = imgY.getAttribute('src');
+    const image_yellow = document.getElementById('tape_y')   
 
-    function overY(){
-        imgY.setAttribute('src','image/m_tape_yellow_over.png');
-    }       
+    image_yellow.addEventListener('mouseover',function(){
+        this.setAttribute('src','image/m_tape_yellow_over.png');
+    });
+    image_yellow.addEventListener('mouseleave',function(){
+        this.setAttribute('src','image/m_tape_yellow_default.png');
+    });
 
-    function leaveY(){
-        imgY.setAttribute('src', 'image/m_tape_yellow_default.png');
-    }       
+    //ピンク　
+    const image_pink = document.getElementById('tape_p')   
 
-    imgY.addEventListener('mouseover',overY);
-    imgY.addEventListener('mouseleave',leaveY);
+    image_pink.addEventListener('mouseover',function(){
+        this.setAttribute('src','image/m_tape_pink_over.png');
+    });
+    image_pink.addEventListener('mouseleave',function(){
+        this.setAttribute('src','image/m_tape_pink_default.png');
+    });
 
-    //ピンク→緑
-    const imgP = document.getElementById('tape_p');
+    //青
+    const image_blue = document.getElementById('tape_b')   
 
-    // let src = imgP.getAttribute('src');
-
-    function overP(){
-        imgP.setAttribute('src','image/m_tape_pink_over.png');
-    }       
-
-    function leaveP(){
-        imgP.setAttribute('src', 'image/m_tape_pink_default.png');
-    }       
-
-    imgP.addEventListener('mouseover',overP);
-    imgP.addEventListener('mouseleave',leaveP);
-
-    //青　
-    const imgB = document.getElementById('tape_b');
-
-    // let src = imgY.getAttribute('src');
-
-    function overB(){
-        imgB.setAttribute('src','image/m_tape_blue_over.png');
-    }       
-
-    function leaveB(){
-        imgB.setAttribute('src', 'image/m_tape_blue_default.png');
-    }       
-
-    imgB.addEventListener('mouseover',overB);
-    imgB.addEventListener('mouseleave',leaveB);
+    image_blue.addEventListener('mouseover',function(){
+        this.setAttribute('src','image/m_tape_blue_over.png');
+    });
+    image_blue.addEventListener('mouseleave',function(){
+        this.setAttribute('src','image/m_tape_blue_default.png');
+    });
 
     //緑
-    const imgG = document.getElementById('tape_g');
+    const image_green = document.getElementById('tape_g')   
 
-    // let src = imgP.getAttribute('src');
+    image_green.addEventListener('mouseover',function(){
+        this.setAttribute('src','image/m_tape_green_over.png');
+    });
+    image_green.addEventListener('mouseleave',function(){
+        this.setAttribute('src','image/m_tape_green_default.png');
+    });
 
-    function overG(){
-        imgG.setAttribute('src','image/m_tape_green_over.png');
-    }       
+    //まえのやつ
+    // const imgG = document.getElementById('tape_g');
 
-    function leaveG(){
-        imgG.setAttribute('src', 'image/m_tape_green_default.png');
-    }       
+    // function overG(){
+    //     imgG.setAttribute('src','image/m_tape_green_over.png');
+    // }       
 
-    imgG.addEventListener('mouseover',overG);
-    imgG.addEventListener('mouseleave',leaveG);
+    // function leaveG(){
+    //     imgG.setAttribute('src', 'image/m_tape_green_default.png');
+    // }       
+
+    // imgG.addEventListener('mouseover',overG);
+    // imgG.addEventListener('mouseleave',leaveG);
 
     // 
     //     const img = document.getElementById('m_tape');
@@ -143,4 +134,33 @@
     //     img.onmouseleave = leave;
 
     // 
+
+    // const buttonImageMapping = {
+    //     'tape_y': {
+    //         mouseover: 'image/m_tape_yellow_over.png',
+    //         mouseleave: 'image/m_tape_yellow_default.png'
+    //     },
+    //     'tape_p': {
+    //         mouseover: 'image/m_tape_pink_over.png',
+    //         mouseleave: 'image/m_tape_pink_default.png'
+    //     },
+    //     'tape_b': {
+    //         mouseover: 'image/m_tape_blue_over.png',
+    //         mouseleave: 'image/m_tape_blue_default.png'
+    //     },
+    //     'tape_g': {
+    //         mouseover: 'image/m_tape_green_over.png',
+    //         mouseleave: 'image/m_tape_green_default.png'
+    //     }
+    // }
+
+    // Object.keys(buttonImageMapping).forEach(type => {
+    //     const img = document.getElementById(type);
+    //     img.addEventListener('mouseover', function () { 
+    //         this.setAttribute('src',buttonImageMapping[type].mouseover);
+    //     });
+    //     img.addEventListener('mouseleave', function () { 
+    //         this.setAttribute('src',buttonImageMapping[type].mouseleave);
+    //     });
+    // });
 </script>
