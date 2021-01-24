@@ -80,33 +80,33 @@
     imgP.addEventListener('mouseover',overP);
     imgP.addEventListener('mouseleave',leaveP);
 
-    //青 →　黄色　
+    //青　
     const imgB = document.getElementById('tape_b');
 
     // let src = imgY.getAttribute('src');
 
     function overB(){
-        imgB.setAttribute('src','image/m_tape_yellow_over.png');
+        imgB.setAttribute('src','image/m_tape_bule_over.png');
     }       
 
     function leaveB(){
-        imgB.setAttribute('src', 'image/m_tape_blue.png');
+        imgB.setAttribute('src', 'image/m_tape_blue_default.png');
     }       
 
     imgB.addEventListener('mouseover',overB);
     imgB.addEventListener('mouseleave',leaveB);
 
-    //緑→ピンク
+    //緑
     const imgG = document.getElementById('tape_g');
 
     // let src = imgP.getAttribute('src');
 
     function overG(){
-        imgG.setAttribute('src','image/m_tape_pink_over.png');
+        imgG.setAttribute('src','image/m_tape_green_over.png');
     }       
 
     function leaveG(){
-        imgG.setAttribute('src', 'image/m_tape_green.png');
+        imgG.setAttribute('src', 'image/m_tape_green_default.png');
     }       
 
     imgG.addEventListener('mouseover',overG);
