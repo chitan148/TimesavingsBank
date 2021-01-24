@@ -86,7 +86,7 @@
     // let src = imgY.getAttribute('src');
 
     function overB(){
-        imgB.setAttribute('src','image/m_tape_bule_over.png');
+        imgB.setAttribute('src','image/m_tape_blue_over.png');
     }       
 
     function leaveB(){
