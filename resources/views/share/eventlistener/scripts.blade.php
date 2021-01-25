@@ -1,53 +1,4 @@
 <script>
-    // const img = document.getElementById('m_tape');
-
-    // let src = img.getAttribute('src');
-
-    // function over(){
-    //     img.setAttribute('src','/image/m_tape_blue.png');
-    // }
-
-    // function leave(){
-    //     img.setAttribute('src', 'image/m_tape_yellow.png');
-    // }
-
-    // img.addEventListener('onmouseover',over);
-    // img.addEventListener('onmouseleave',leave);
-        
-    // function over() {
-    //     const img = document.getElementById('m_tape');
-    //     img.setAttribute('src', 'image/m_tape_pink.png');
-    // }
-    // function leave() {
-    //     const img = document.getElementById('m_tape');
-    //     img.setAttribute('src', 'image/m_tape_yellow.png');
-    // }
-   
-    // function over() {
-    // //     const img_passes = ['image/m_tape_pink.png', 'image/m_tape_yellow.png','image/m_tape_blue.png','image/m_tape_green.png']
-    //     const img = document.getElementById('m_tape');
-    //     const src = img.getAttribute('src');
-    //     let img_pass;
-    // //     if(src === img_passes[1]){
-    // //         img_pass = img_passes[0]
-    // //     } else if(src === img_passes[0]) {
-    // //         img_pass = img_passes[2]
-    // //     } else if(src === img_passes[2]){
-    // //         img_pass = img_passes[3]
-    // //     } else if(src === img_passes[3]){
-    // //         img_pass = img_passes[1]
-    // //     }
-    //     if(src === 'image/m_tape_yellow.png'){
-    //         img.setAttribute('src','/image/m_tape_blue.png');
-    //     }
-       
-    // }
-    // function leave() {
-    //     var img = document.getElementById('m_tape');
-    //     img.setAttribute('src', 'image/m_tape_yellow.png');
-    // }
-
-
 
     //黄色　
     const image_yellow = document.getElementById('tape_y')   
@@ -134,7 +85,7 @@
     //     img.onmouseleave = leave;
 
     // 
-
+    //　まだ理解できない
     // const buttonImageMapping = {
     //     'tape_y': {
     //         mouseover: 'image/m_tape_yellow_over.png',
