@@ -151,17 +151,16 @@ h1 {
     text-align: center;
 }
 
-.guide-wrapper button{
+/* .guide-wrapper button{
     padding: 0;
     border: none;
     background: transparent;
-  }
+  } */
   
 
 .guide-wrapper img{
     margin: 0;
-    padding: 0;
-    display: block;
+    padding-right: 1.5rem;
     height: 50px;
   }
 
