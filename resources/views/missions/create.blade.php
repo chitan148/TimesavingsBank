@@ -25,7 +25,7 @@
                 @csrf
                 <h1>ミッションを作りましょう</h1>
                 <div class="form-group">
-                    <label for="name">ミッション名</label>
+                    <label for="name">ミッション名（30文字以内）</label>
                     <input type="text" class="form-control font-default" id="name" name="name" maxlength="30" >
                 </div>
                 <div class="form-group">
