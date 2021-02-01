@@ -13,11 +13,11 @@ class MissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $user_detail = DB::table('user_details')->first();//user_detailsテーブルの最初の一行めのidを取得。
+        $user_detail = DB::table('user_details')->first();//user_detailsテーブルの最初の一行めを取得。
         
         DB::table('missions')->insert([
             [
-            'user_detail_id' => $user_detail->id,
+            'user_detail_id' => $user_detail->id,//それのid
             'name' => '歩く',
             'time' => 30,
             'difficulty' => 3,
