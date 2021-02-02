@@ -3,10 +3,13 @@
 namespace Tests\Feature;
 
 use App\Http\Requests\CreateMission;
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Mission;
+use App\User;
+use Log;
 
 class MissionTest extends TestCase
 {
@@ -34,7 +37,8 @@ class MissionTest extends TestCase
         
         //テストケース実行前にミッションデータを作成する
         $this->seed('UsersTableSeeder');
-        $this->seed('MissionsTableSeeder');
+        $this->seed('UserDetailsTableSeeder');
+    
     }
     /**
     * グループが定義された値ではない場合はバリデーションエラー
@@ -42,14 +46,23 @@ class MissionTest extends TestCase
     */
     public function group_should_be_within_defined_numbers()
     {
-        $response = $this->post('users/1/missions/create', [
+        //idはオートインクリメントがややこしいので、メルアドでユーザー取得
+        $user = User::where('email','dummy@email.com')->first();
+        $user_detail = $user->user_detail->first();
+        // Log::info($user->user_detail->first());
+        // Log::info($user_detail->id);
+        
+        $response = $this->actingAs($user)->post(route('missions.create', ['user_detail' => $user_detail->id]), [
             'name' => '毎日寝る',
             'time' => '10',
             'difficulty' => '1',
-            'group' => '7'
+            'group' => '7',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
+        // $response->dumpSession();
         $response->assertSessionHasErrors([
-        'group' => ' グループ には 習慣、健康 のどれかを選んで下さい',
+        'group' => '「グループ」には習慣、健康のどれかを選んで下さい'//このときはinは要らない
         ]);
     }
     
