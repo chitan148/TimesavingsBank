@@ -30,6 +30,6 @@ class MailForPasswordReset extends Mailable
     {
         return $this
         ->subject('こちらから登録してください')
-        ->view('mail.password_reset');
+        ->view('mail.password_reset', ["token" => $this->token]);
     }
 }
