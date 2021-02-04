@@ -14,11 +14,11 @@ class MailForPasswordReset extends Mailable
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param $token
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -28,6 +28,8 @@ class MailForPasswordReset extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this
+        ->subject('こちらから登録してください')
+        ->view('mail.password_reset');
     }
 }
