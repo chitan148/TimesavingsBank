@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.basic')
 
 @section('content')
 <div class="container">
@@ -18,7 +18,7 @@
                             <label for="email">メールアドレス</label>
                             <input type="text" class="form-control" id="email" name="email">
                                 @error('email')
-                                    <span>
+                                    <span class="error-address">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
