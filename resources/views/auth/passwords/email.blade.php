@@ -16,9 +16,9 @@
                         @csrf
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
+                            <input type="text" class="form-control" id="email" name="email">
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span>
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
