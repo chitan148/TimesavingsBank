@@ -17,6 +17,6 @@ return [
     'sent' => 'パスワード再設定ページへのリンクを送信しました。メールをご確認下さい。届かない場合、メールアドレスが間違っているか、迷惑メールアドレスに入っている可能性があります',
     'throttled' => 'Please wait before retrying.',
     'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that email address.",
+    'user' => "入力されたメールアドレスは存在していません",
 
 ];
