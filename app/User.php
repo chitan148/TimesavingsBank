@@ -42,8 +42,8 @@ class User extends Authenticatable
         return $this->hasOne('App\UserDetail');
     }
     public function sendPasswordResetNotification($token){
-        Mail::to($this)->send(new MailForPasswordReset($token));
-        // Mail::to($this)->queue(new MailForPasswordReset($token));
+        // Mail::to($this)->send(new MailForPasswordReset($token));
+        Mail::to($this)->queue(new MailForPasswordReset($token));
         //Mail::to($request->user())->send(new OrderShipped($order));
         //toは送信先　userなので$thisでいい　sendはMailファサード　与えられたメーラーを使ってメッセージを送信する仕事のひと
         //Mailファサード　vendorのsrcのMailable.phpの162行目　buildFromは343行目　他のも全部あるから困ったら探して読む
