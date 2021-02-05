@@ -16,7 +16,12 @@
                         @csrf
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
-                            <input type="text" class="form-control" id="email" name="email">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                         </div>
                         <div class="text-right">
                             <button type="submit" class="btn btn-primary">再度リンクを送る</button>
