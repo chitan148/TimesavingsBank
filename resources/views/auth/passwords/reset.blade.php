@@ -13,11 +13,11 @@
                         <div class="form-group text-left">
                             <label for="email">メールアドレス</label>
                             <input type="email" class="form-control form-control-lg font-default" id="email" name="email">
-                            @error('email')
+                                @error('email')
                                     <span class="error-message">
                                         <p>{{ $message }}</p>
                                     </span>
-                            @enderror
+                                @enderror
                         </div>
                         <div class="form-group text-left">
                             <label for="password">新しいパスワード</label>
@@ -26,6 +26,11 @@
                         <div class="form-group text-left">
                             <label for="password-confirm">新しいパスワード（確認）</label>
                             <input type="password" class="form-control form-control-lg font-default" id="password-confirm" name="password_confirmation">
+                                @error('password')
+                                    <span class="error-message">
+                                        <p>{{ $message }}</p>
+                                    </span>
+                                @enderror
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn-lg btn-lg-bottom">送信</button>
