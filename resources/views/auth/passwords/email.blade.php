@@ -19,7 +19,7 @@
                             <label for="email">メールアドレス</label>
                             <input type="email" class="form-control form-control-lg font-default" id="email" name="email" required>
                                 @error('email')
-                                    <span class="error-address">
+                                    <span class="error-message">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
