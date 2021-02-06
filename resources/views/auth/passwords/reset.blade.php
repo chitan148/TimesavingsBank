@@ -13,6 +13,11 @@
                         <div class="form-group text-left">
                             <label for="email">メールアドレス</label>
                             <input type="email" class="form-control form-control-lg font-default" id="email" name="email">
+                            @error('email')
+                                    <span class="error-message">
+                                        <p>{{ $message }}</p>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group text-left">
                             <label for="password">新しいパスワード</label>
