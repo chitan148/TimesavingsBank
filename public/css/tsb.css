@@ -249,6 +249,10 @@ h1 {
 .error-address{
     color: red;
 }
+
+.guidance{
+    color:#595b97;
+}
    
 /* .no-gutters　> .col,
 .no-gutters　> [class*="col-"] {
