@@ -16,7 +16,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
-                            <input type="text" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email" required>
                                 @error('email')
                                     <span class="error-address">
                                         <strong>{{ $message }}</strong>
