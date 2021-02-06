@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Http\Request;
+use Log;
 
 class ForgotPasswordController extends Controller
 {
@@ -19,4 +21,22 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
+
+    //リンクを送るのが失敗な方の処理関数（登録されてないメルアドだった）をオーバーライド
+    protected function sendResetLinkFailedResponse(Request $request, $response)
+    {
+        if ($request->wantsJson()) {//リスエストがJSONを要求しているか判定する…？
+            throw ValidationException::withMessages([
+                'email' => [trans($response)],
+            ]);
+        }
+        Log::info($response);
+        $response = 'passwords.sent';
+                //成功の時と同じメッセージを返して、エラーであることは伏せておく。
+        return back()->with('status', trans($response));
+
+        // return back()
+        //         ->withInput($request->only('email')) //onlyは　"だけ"　じゃなくて　"のみ"　取得しますっていうやつ　exceptは "除いて"
+        //         ->withErrors(['email' => trans($response)]);
+    }
 }
