@@ -31,7 +31,7 @@ class ForgotPasswordController extends Controller
             ]);
         }
         Log::info($response);
-        $response = 'passwords.sent';
+        $response = Password::RESET_LINK_SENT;
                 //成功の時と同じメッセージを返して、エラーであることは伏せておく。
         return back()->with('status', trans($response));
 
