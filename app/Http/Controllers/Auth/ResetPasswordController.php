@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
 
 class ResetPasswordController extends Controller
 {
@@ -20,6 +21,24 @@ class ResetPasswordController extends Controller
     */
 
     use ResetsPasswords;
+
+    protected function sendResetFailedResponse(Request $request, $response)
+    {
+        if ($request->wantsJson()) {
+            throw ValidationException::withMessages([
+                'email' => [trans($response)],
+            ]);
+        }
+
+        $response = '';
+
+        // return redirect($this->redirectPath())
+        //                     ->with('status', trans($response));
+        return back() //ResetPasswords.phpでは redirect()->back() だったけどこっちでもいける。謎。
+                    ->withInput($request->only('email'))
+                    ->withErrors(['email' => trans($response)]);
+        
+    }
 
     /**
      * Where to redirect users after resetting their password.
