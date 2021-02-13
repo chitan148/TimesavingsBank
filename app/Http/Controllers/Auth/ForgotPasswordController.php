@@ -30,13 +30,13 @@ class ForgotPasswordController extends Controller
                 'email' => [trans($response)],
             ]);
         }
-        Log::info($response);
-        $response = Password::RESET_LINK_SENT;
+        
+        $response = Password::RESET_LINK_SENT; //Passwordクラスに定義されている変数（翻訳前メッセージ）
                 //成功の時と同じメッセージを返して、エラーであることは伏せておく。
-        return back()->with('status', trans($response));
+        return back()->with('status', trans($response));//ステータスに翻訳したメッセージを入れて直前ページに戻る
 
-        // return back()
-        //         ->withInput($request->only('email')) //onlyは　"だけ"　じゃなくて　"のみ"　取得しますっていうやつ　exceptは "除いて"
-        //         ->withErrors(['email' => trans($response)]);
+        // return back()　//PasswordBroker.phpの分岐で、is_nullメソッドがtrueで、INVALID_USERが入ってる
+        //         ->withInput($request->only('email')) //onlyは　"だけ"　じゃなくて　"のみ"　取得しますっていうやつ　※exceptは "除いて"
+        //         ->withErrors(['email' => trans($response)]);　emailキーで翻訳を渡している。
     }
 }
