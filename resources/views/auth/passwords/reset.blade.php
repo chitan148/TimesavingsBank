@@ -12,7 +12,7 @@
                         <input type="hidden" name="token" value="{{ $token }}">
                         <div class="form-group text-left">
                             <label for="email">メールアドレス</label>
-                            <input type="email" class="form-control form-control-lg font-default" id="email" name="email">
+                            <input type="hidden" class="form-control form-control-lg font-default" id="email" name="email">
                                 @error('email')
                                     <span class="error-message">
                                         <p>{{ $message }}</p>
