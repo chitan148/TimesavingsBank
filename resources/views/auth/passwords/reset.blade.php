@@ -20,6 +20,7 @@
                                 @enderror
                             <p>{{ $token }}</p>
                             <p>{{ $email }}</p>
+                            <p>{{ $var }}</p>
                         </div>
                         <div class="form-group text-left">
                             <label for="password">新しいパスワード</label>
