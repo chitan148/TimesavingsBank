@@ -10,7 +10,17 @@
                     <form action="{{ route('password.update') }}" method="POST">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
-                        <input type="hidden" name="email" value="{{ $email }}">
+                        <div class="form-group text-left">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" class="form-control form-control-lg font-default" id="email" name="email">
+                                @error('email')
+                                    <span class="error-message">
+                                        <p>{{ $message }}</p>
+                                    </span>
+                                @enderror
+                            <p>{{ $token }}</p>
+                            <p>{{ $email }}</p>
+                        </div>
                         <div class="form-group text-left">
                             <label for="password">新しいパスワード</label>
                             <input type="password" class="form-control form-control-lg font-default" id="password" name="password">
