@@ -1,6 +1,11 @@
 @extends('layouts.basic')
 
 @section('content')
+@if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+@endif
 <div class="container">
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
