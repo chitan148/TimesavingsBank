@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
-use Log;
+use Illuminate\Support\Facades\Password;//ユーザーが間違えて2回メアドを送った時用
+
 
 class ForgotPasswordController extends Controller
 {
