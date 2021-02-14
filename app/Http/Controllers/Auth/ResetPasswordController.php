@@ -34,15 +34,15 @@ class ResetPasswordController extends Controller
         
     // }
     
-    //パスワードリセットに成功した時
-    protected function sendResetResponse(Request $request, $response)
-    {
-        if ($request->wantsJson()) {
-            return new JsonResponse(['message' => trans($response)], 200);
-        }
+    // //パスワードリセットに成功した時
+    // protected function sendResetResponse(Request $request, $response)
+    // {
+    //     if ($request->wantsJson()) {
+    //         return new JsonResponse(['message' => trans($response)], 200);
+    //     }
 
-        return redirect()->route('login')->with('status', trans($response));
-    }
+    //     return redirect()->route('login')->with('status', trans($response));
+    // }
 
     //パスワードリセットに失敗した時
     protected function sendResetFailedResponse(Request $request, $response)
@@ -55,10 +55,8 @@ class ResetPasswordController extends Controller
         //成功と同じメッセージを返す
         $response = Password::PASSWORD_RESET;
 
-        return redirect()->route('login')->with('status', trans($response));
-
-        // return redirect($this->redirectPath())
-        //                     ->with('status', trans($response));
+        return redirect($this->redirectPath())
+                            ->with('status', trans($response));
         // return back() //ResetPasswords.phpでは redirect()->back() だったけどこっちでもいける。謎。
         //             ->withInput($request->only('email'))
         //             ->withErrors(['email' => trans($response)]);
@@ -82,5 +80,5 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::LOGIN;
 }
