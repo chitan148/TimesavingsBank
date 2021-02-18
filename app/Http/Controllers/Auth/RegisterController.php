@@ -100,7 +100,7 @@ class RegisterController extends Controller
     protected function registered(Request $request, $user)
     {
         // 登録したらメッセージを表示
-        return redirect('home', ['user_detail' => $user->user_detail->id ])->with('my_status',
+        return redirect()->route('home', ['user_detail' => $user->user_detail->id ])->with('my_status',
             ('登録されました') 
         );
     }

@@ -63,7 +63,7 @@ class CreateMission extends FormRequest
         //group.inという名前のカスタムメッセージを作成
         //公式さん「ドット」記法を使用し行います。最初が属性名で、続いてルールをつなげます。
         return [
-            'group.in' => ':attributeには、'. $group_titles. 'のどれかを選んで下さい'
+            'group.in' => ':attributeには'.$group_titles.'のどれかを選んで下さい'
         ];
     }
 }
