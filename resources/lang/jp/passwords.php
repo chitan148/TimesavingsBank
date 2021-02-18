@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have emailed your password reset link!',
+    'reset' => 'パスワードを変更しました。新しいパスワードでログインしてください。ログインできない場合は、ご入力頂いたメールアドレスを確認の上、再度お手続き下さい',
+    'sent' => 'パスワード再設定ページへのリンクを送信致しました。メールをご確認下さい。届かない場合、メールアドレスが間違っているか、迷惑メールアドレスに入っている可能性があります。再度ご入力下さい。',
     'throttled' => 'Please wait before retrying.',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that email address.",
+    'token' => 'このページの有効期限（６０分）が切れてしまいました。ログインページからもう一度お試し下さい。',
+    'user' => "入力されたメールアドレスは存在していません",
 
 ];

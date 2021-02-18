@@ -25,16 +25,16 @@
                 @csrf
                 <h1>ミッションを作りましょう</h1>
                 <div class="form-group">
-                    <label for="name">ミッション名</label>
-                    <input type="text" class="form-control font-default " id="name" name="name" >
+                    <label for="name">ミッション名（30文字以内）</label>
+                    <input type="text" class="form-control font-default" id="name" name="name" maxlength="30" >
                 </div>
                 <div class="form-group">
                     <label for="time">もらえる時間（数字のみ）</label>
-                    <input type="number" class="form-control font-default " id="time" name="time">
+                    <input type="number" class="form-control font-default" id="time" name="time" min="1">
                 </div>
                 <div class="form-group">
                     <label for="difficulty">むずかしさ（１から５まで）</label><br>
-                    <input type="number" class="form-control font-default " id="difficulty" name="difficulty">
+                    <input type="number" class="form-control font-default" id="difficulty" name="difficulty" min="1" max="5">
                 </div>
                 <div class="form-group">
                     <span>グループ</span><br>
