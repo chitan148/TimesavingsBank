@@ -245,6 +245,14 @@ h1 {
   background-color: #fffbdb;
   border-color: #fffacc;
 }
+
+.error-message{
+    color: #f12345;
+}
+
+.guidance{
+    color:#595b97;
+}
    
 /* .no-gutters　> .col,
 .no-gutters　> [class*="col-"] {
