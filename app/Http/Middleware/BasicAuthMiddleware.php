@@ -18,14 +18,15 @@ class BasicAuthMiddleware
         $username = $request->getUser();
         $password = $request->getPassword();
 
-            if ($username === 'test1123' && $password === '1481123') {
-                return $next($request);
-            }
+        if ($username === 'test1123' && $password === '1481123') {
+            return $next($request);
+        }
 
-            abort(401, "Enter username and password.", [
-                header('WWW-Authenticate: Basic realm="閲覧できません"'),
-                header('Content-Type: text/plain; charset=utf-8')
-            ]);
+        abort(401, "Enter username and password.", [
+            header('WWW-Authenticate: Basic realm="閲覧できません"'),
+            header('Content-Type: text/plain; charset=utf-8')
+        ]);
+        
         return $next($request);
     }
 }
