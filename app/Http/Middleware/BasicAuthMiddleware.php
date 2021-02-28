@@ -16,9 +16,9 @@ class BasicAuthMiddleware
     public function handle($request, Closure $next)
     {
         $username = $request->getUser();
-            $password = $request->getPassword();
+        $password = $request->getPassword();
 
-            if ($username == 'test1123' && $password = '1481123') {
+            if ($username === 'test1123' && $password === '1481123') {
                 return $next($request);
             }
 
