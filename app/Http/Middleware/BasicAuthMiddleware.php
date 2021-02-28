@@ -23,7 +23,7 @@ class BasicAuthMiddleware
         }
 
         abort(401, "Enter username and password.", [
-            header('WWW-Authenticate: Basic realm="閲覧できません"'),
+            header('WWW-Authenticate: Basic realm="TimesavingsBank"'),
             header('Content-Type: text/plain; charset=utf-8')
         ]);
         
