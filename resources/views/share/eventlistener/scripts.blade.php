@@ -54,21 +54,19 @@
     // imgG.addEventListener('mouseover',overG);
     // imgG.addEventListener('mouseleave',leaveG);
 
-    // 
-    //     const img = document.getElementById('m_tape');
+    //説明で使う黄色
+        // const image_yellow = document.getElementById('tape_y');
 
-    //     let src = img.getAttribute('src');
+        // function overY(){
+        //     image_yellow.setAttribute('src','image/m_tape_yellow_over.png');
+        // }       
 
-    //     function over(){
-    //         img.setAttribute('src','image/m_tape_blue.png');
-    //     }       
+        // function leaveG(){
+        //     image_yellow.setAttribute('src', 'm_tape_yellow_default.png');
+        // }       
 
-    //     function leave(){
-    //         img.setAttribute('src', 'image/m_tape_yellow.png');
-    //     }       
-
-    //     img.addEventListener('mouseover',over);
-    //     img.addEventListener('mouseleave',leave);
+        // image_yellow.addEventListener('mouseover',overY);
+        // image_yellow.addEventListener('mouseleave',leaveG);
 
 
     // 
