@@ -1,7 +1,7 @@
 <script>
 
     //黄色　
-    const image_yellow = document.getElementById('tape_y')   
+    const image_yellow = document.getElementById('tape_y');  
 
     image_yellow.addEventListener('mouseover',function(){
         this.setAttribute('src','image/m_tape_yellow_over.png');
@@ -11,7 +11,7 @@
     });
 
     //ピンク　
-    const image_pink = document.getElementById('tape_p')   
+    const image_pink = document.getElementById('tape_p');  
 
     image_pink.addEventListener('mouseover',function(){
         this.setAttribute('src','image/m_tape_pink_over.png');
@@ -21,7 +21,7 @@
     });
 
     //青
-    const image_blue = document.getElementById('tape_b')   
+    const image_blue = document.getElementById('tape_b');   
 
     image_blue.addEventListener('mouseover',function(){
         this.setAttribute('src','image/m_tape_blue_over.png');
@@ -31,7 +31,7 @@
     });
 
     //緑
-    const image_green = document.getElementById('tape_g')   
+    const image_green = document.getElementById('tape_g');   
 
     image_green.addEventListener('mouseover',function(){
         this.setAttribute('src','image/m_tape_green_over.png');
@@ -61,12 +61,12 @@
         //     image_yellow.setAttribute('src','image/m_tape_yellow_over.png');
         // }       
 
-        // function leaveG(){
+        // function leaveY(){
         //     image_yellow.setAttribute('src', 'm_tape_yellow_default.png');
         // }       
 
         // image_yellow.addEventListener('mouseover',overY);
-        // image_yellow.addEventListener('mouseleave',leaveG);
+        // image_yellow.addEventListener('mouseleave',leaveY);
 
 
     // 
