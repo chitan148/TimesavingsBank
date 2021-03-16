@@ -27,7 +27,7 @@
                     <div class="col-lg-4 offset-lg-1 white">
                         <h2>入刻履歴</h2>
                         <div class="record_wrapper">
-                            @foreach($user_detail->trades as $trade)
+                            @foreach($user_detail->trades->sortByDesc('id') as $trade)
                                @foreach($trade->trade_details as $trade_detail)
                                     @if($loop->first)
                                         <div class="card">
@@ -50,7 +50,7 @@
                     <div class="col-lg-4 offset-lg-2 white">
                         <h2>出刻履歴</h2>
                         <div class="record_wrapper">
-                            @foreach($user_detail->trades as $trade)
+                            @foreach($user_detail->trades->sortByDesc('id') as $trade)
                                 @if ($trade->type === 2)
                                     <div class="card">
                                         <div class="card-header withdraw_color">{{ $trade->created_at->format('Y年m月d日') }}</div>
