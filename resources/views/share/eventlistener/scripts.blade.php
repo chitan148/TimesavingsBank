@@ -62,7 +62,7 @@
         // }       
 
         // function leaveY(){
-        //     image_yellow.setAttribute('src', 'm_tape_yellow_default.png');
+        //     image_yellow.setAttribute('src','image/m_tape_yellow_default.png');
         // }       
 
         // image_yellow.addEventListener('mouseover',overY);
