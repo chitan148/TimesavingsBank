@@ -50,7 +50,7 @@ class CreateMission extends FormRequest
     public function messages()
     {
         //グループのタイトル（習慣とか健康とか）を、モデルMissionのGROUP　からもらってくる。
-        //array_mapで配列に関数を適用させる。配列＝Mission::GROUP に　関数＝titleがkeyのやつを呼び出してretrunするよ　
+        //array_mapで配列に関数を適用させる。配列＝Mission::GROUP に　関数＝titleがkeyのやつを呼び出してretrunするよ　を適用
         $group_titles = array_map(
             function($group){
                 return $group['title'];
