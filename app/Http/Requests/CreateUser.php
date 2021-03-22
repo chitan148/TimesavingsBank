@@ -16,7 +16,7 @@ class CreateUser extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;//使わない
     }
 
     /**
@@ -26,7 +26,7 @@ class CreateUser extends FormRequest
      */
     public function rules()
     {
-        $gender_rule = Rule::in(array_keys(UserDetail::GENDER));
+        $gender_rule = Rule::in(array_keys(UserDetail::GENDERS));
         return [
             'name' => 'required', 'string', 'max:255',
             'email' => 'required', 'string', 'email', 'max:255', 'unique:users',
@@ -50,7 +50,7 @@ class CreateUser extends FormRequest
             function($gender){
                 return $gender['type'];
             }, 
-            UserDetail::GENDER);
+            UserDetail::GENDERS);
         
         //読点を入れる
         $gender_types = implode('、', $gender_types);
