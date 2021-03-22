@@ -26,7 +26,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers, CreateUser;
+    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
