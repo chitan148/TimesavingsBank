@@ -9,7 +9,7 @@ use App\UserDetail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
+use Illuminate\Http\CreateUser;//フォームリクエスト
 use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
@@ -43,7 +43,17 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+    // public function register(CreateUser $request)
+    // {
+    // //$this->validator($request->all())->validate();
 
+    // event(new Registered($user = $this->create($request->all())));
+
+    // $this->guard()->login($user);
+
+    // return $this->registered($request, $user)
+    //                 ?: redirect($this->redirectPath());
+    // }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -90,6 +100,26 @@ class RegisterController extends Controller
             return $user;
         }); 
     }
+    // protected function create(CreateUser $request)
+    // {
+    //     //トランザクションを貼る
+    //     return DB::transaction(function () use($request) { //use($data) 変数$dataを関数の中で使えるようにする
+    //         //usersテーブルへのinsert
+    //         $user = User::create([
+    //             'email' => $request->email,
+    //             'password' => Hash::make($request->password),
+    //         ]);
+    //         //user_detailテーブルへのinsert
+    //         $detail = new UserDetail;
+    //         $detail->user_id = $user->id;
+    //         $detail->name = $request->name;
+    //         $detail->gender = $request->gender;
+    //         $detail->saving_time = 0;
+    //         $detail->save();
+
+    //         return $user;
+    //     }); 
+    // }
     /*public function result(){
         $user_details = Auth::user()->userDetails()->get();
         $gender = $user_details->gender;
