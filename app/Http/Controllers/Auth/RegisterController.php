@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateUser;//フォームリクエスト
 use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -48,7 +49,7 @@ class RegisterController extends Controller
     {
     //$this->validator($request->all())->validate();
 
-    event(new Registered($user = $this->create($request->all())));
+    event(new Registered($user = $this->create($request))); //$request->all()のままだと型エラー
 
     $this->guard()->login($user);
 
