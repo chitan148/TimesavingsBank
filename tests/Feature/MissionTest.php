@@ -62,7 +62,7 @@ class MissionTest extends TestCase
         ]);
         // $response->dumpSession();
         $response->assertSessionHasErrors([
-        'group' => '「グループ」には習慣、健康のどれかを選んで下さい'//このときはinは要らない
+        'group' => '「グループ」には習慣、健康、運動、趣味、学習、手続きのどれかを選んで下さい'//このときはinは要らない
         ]);
     }
     
