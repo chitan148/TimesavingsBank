@@ -57,7 +57,7 @@ class CreateMission extends FormRequest
             }, 
             Mission::GROUP);
         
-        //implode もらってきた習慣とか健康を読点（、）でくっつけて再代入。
+        //implode もらってきた習慣とか健康を読点（、）でくっつけて再代入。間に挟む連結文字。前と後には来ない。
         $group_titles = implode('、', $group_titles);
         
         //group.inという名前のカスタムメッセージを作成
