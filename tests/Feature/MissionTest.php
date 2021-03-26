@@ -53,12 +53,12 @@ class MissionTest extends TestCase
         // Log::info($user_detail->id);
         
         $response = $this->actingAs($user)->post(route('missions.create', ['user_detail' => $user_detail->id]), [
-            'name' => '毎日寝る',
-            'time' => '10',
-            'difficulty' => '1',
-            'group' => '7',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            // 'name' => '毎日寝る',
+            // 'time' => '10',
+            // 'difficulty' => '1',
+            'group' => '7', //エラーにしたいのだけあればよかった
+            // 'created_at' => Carbon::now(),
+            // 'updated_at' => Carbon::now(),
         ]);
         // $response->dumpSession();
         $response->assertSessionHasErrors([
