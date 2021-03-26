@@ -2,8 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Requests\CreateMission;
-use Carbon\Carbon;
+use App\Http\Requests\CreateUser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -26,6 +25,15 @@ class UserDetailTest extends TestCase
     /**
      * 各テストメソッドの実行前に呼ばれる
      */
+    // public function setUp():void
+    // {
+    //     parent::setUp();
+    
+    // }
+    /**
+    * 性別が定義された値ではない場合はバリデーションエラー
+    * @test
+    */
     public function gender_should_be_within_defined_numbers(){
        
         $response = $this->post(route('register',[
@@ -33,7 +41,7 @@ class UserDetailTest extends TestCase
         ]));
         // $response->dumpSession();
         $response->assertSessionHasErrors([
-            'gender' => '「性別」は男性、女性の中から選んで下さい'
+            'gender' => '性別は男性、女性の中から選んで下さい'
         ]);
     }
 }
