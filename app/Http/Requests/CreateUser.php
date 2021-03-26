@@ -57,7 +57,7 @@ class CreateUser extends FormRequest
         
         //ルール名をつけてメッセージを返す
         return [
-            'gender.in' => ':attributeには'.$gender_types.'のどれかを選んで下さい'
+            'gender.in' => ':attributeは'.$gender_types.'の中から選んで下さい'
         ];
     }
 }
