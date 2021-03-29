@@ -185,7 +185,7 @@ class DepositController extends Controller
         );
 
         //リロード対策　トークン再発行　ページ編集後コメントアウトを消す。
-        // $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
         
         return view('deposit.result', [
             'user_name' => $user_name,
