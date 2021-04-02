@@ -17,11 +17,11 @@
                         @csrf
                         <div class="form-group">
                             <label for="email">メールアドレス</label>
-                            <input type="text" class="form-control form-control-lg font-default" id="email" name="email">
+                            <input type="text" class="form-control form-control-lg font-default" id="email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="password">パスワード</label>
-                            <input type="password" class="form-control form-control-lg font-default" id="password" name="password">
+                            <input type="password" class="form-control form-control-lg font-default" id="password" name="password" required>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn-lg btn-lg-bottom">送信</button>
