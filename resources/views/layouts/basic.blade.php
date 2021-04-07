@@ -39,6 +39,6 @@
         @endif
         @yield('content')
     </main>
-    {{-- @yield('scripts') js最後まで使わなかったら削除 --}}
+    @yield('scripts')
 </body>
 </html>
