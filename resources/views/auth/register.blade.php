@@ -54,3 +54,7 @@
     </div>
 </div>
 @endsection
+
+@section('scripts')
+    @include('share.eventlistener.scripts_for_password_confirm') <!--share/eventlistener/scripts_for_password_confirm.blade.phpを読み込み-->
+@endsection
