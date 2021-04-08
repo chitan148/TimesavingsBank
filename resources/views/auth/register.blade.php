@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password-confirm">パスワード（確認）</label>
-                    <input type="password" class="form-control font-default" id="password-confirm" name="password_confirmation" required tabindex="4">   
+                    <input type="password" class="form-control font-default" id="password-confirm" name="password_confirmation" minlength="8" required tabindex="4">   
                 </div>
                 <p>性別</p>
                 <div class="form-group">
