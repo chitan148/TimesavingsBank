@@ -32,7 +32,7 @@
 								<P>{{ $mission->name }}</P>
 								<p>むずかしさ：{{ $mission->difficulty }}</p>
 								<p>もらえる時間：{{ $mission->time }}分</p>
-								<input type="number" class="form-control font-default input-sm" placeholder="0" name="mission_id[{{ $mission->id }}]">
+								<input type="number" class="form-control font-default input-sm" placeholder="0" name="mission_id[{{ $mission->id }}]" min="0">
 								<span>回</span>
 							</div>
 						@endforeach
