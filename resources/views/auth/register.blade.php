@@ -16,25 +16,25 @@
                 @csrf    
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
-                    <input type="text" class="form-control font-default" id="email" name="email" tabindex="1">  
+                    <input type="text" class="form-control font-default" id="email" name="email" required tabindex="1">  
                 </div>
                 <div class="form-group">
                     <label for="name">お名前</label>
-                    <input type="text" class="form-control font-default" id="name"  name="name" tabindex="2">
+                    <input type="text" class="form-control font-default" id="name"  name="name" required tabindex="2">
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード(8文字以上）</label>
-                    <input type="password" class="form-control font-default" id="password" name="password" tabindex="3">
+                    <input type="password" class="form-control font-default" id="password" name="password" minlength="8" required tabindex="3">
                 </div>
                 <div class="form-group">
                     <label for="password-confirm">パスワード（確認）</label>
-                    <input type="password" class="form-control font-default" id="password-confirm" name="password_confirmation" tabindex="4">   
+                    <input type="password" class="form-control font-default" id="password-confirm" name="password_confirmation" minlength="8" required tabindex="4">   
                 </div>
                 <p>性別</p>
                 <div class="form-group">
                     @foreach(\App\UserDetail::GENDERS as $key => $value)
                         <div class="form-check form-check-inline">    
-                            <input type="radio" class="form-check-input" id="gender" name="gender" value="{{$key}}">  
+                            <input type="radio" class="form-check-input" id="gender" name="gender" value="{{$key}}" required tabindex="5">  
                             <label for="gender" class="form-check-label">{{ $value['type'] }}</label>   
                         </div>
                     @endforeach
@@ -53,4 +53,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    @include('share.eventlistener.scripts_for_password_confirm') <!--share/eventlistener/scripts_for_password_confirm.blade.phpを読み込み-->
 @endsection

@@ -34,5 +34,5 @@
 @endsection
 
 @section('scripts')
-    @include('share.eventlistener.scripts') <!--share/eventlistener/scripts.blade.phpを読み込み-->
+    @include('share.eventlistener.scripts_for_link_button') <!--share/eventlistener/scripts_for_link_button.blade.phpを読み込み-->
 @endsection
