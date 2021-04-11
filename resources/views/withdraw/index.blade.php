@@ -26,9 +26,9 @@
                 @csrf
                 <div class="form-group">
                     @if(session('withdraw_time'))
-                        <input type="number" placeholder="0" name="withdraw_time" class="form-control font-default input-sm" value="{{ session('withdraw_time') }}" required>
+                        <input type="number" placeholder="0" name="withdraw_time" class="form-control font-default input-sm" value="{{ session('withdraw_time') }}" required min="0">
                     @else
-                        <input type="number" placeholder="0" name="withdraw_time" class="form-control font-default input-sm" required>   
+                        <input type="number" placeholder="0" name="withdraw_time" class="form-control font-default input-sm" required min="0">   
                     @endif
                     <!-- <input type="number" placeholder="0" name="withdraw_time" class="form-control font-default input-sm"> -->
                     <span>分</span><br>
