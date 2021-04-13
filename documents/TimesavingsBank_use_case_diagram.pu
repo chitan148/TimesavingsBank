@@ -8,9 +8,9 @@ actor ユーザー as u
 usecase "会員登録する" as UC1
 usecase "ミッションを登録する" as UC2
 usecase "クリアしたミッションを登録する" as UC3
-usecase "履歴（残高）を見る" as UC4
-usecase "使った時間を登録する"  as UC5
-usecase "コメントを登録する" as UC6
+usecase "使った時間を登録する" as UC4
+usecase "残時間を見る"  as UC5
+' usecase "コメントを登録する" as UC6
 
 u --> UC1 
 u --> UC2
@@ -18,7 +18,7 @@ u --> UC3
 u --> UC4
 u --> UC5
 
-UC3 <. UC6 : <<extend>>
-UC5 <. UC6 : <<extend>>
+' UC3 <. UC6 : <<extend>>
+' UC5 <. UC6 : <<extend>>
 
 @enduml
