@@ -31,6 +31,9 @@
                         <a href="{{ route('password.request') }}">パスワードの変更はこちらから</a>
                     </div>
                 </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{{ asset('image/TimesavingsBank_Users_guide.pdf')}}" target="_blank" rel="noopener noreferrer"><img src="{{ asset('image/to_users_guide.png') }}"></a>
+                </div>
             </nav>
         </div>
     </div>

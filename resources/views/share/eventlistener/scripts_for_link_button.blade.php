@@ -40,6 +40,15 @@
         this.setAttribute('src','image/m_tape_green_default.png');
     });
 
+    //むらさき
+    // const image_purple = document.getElementById('tape_pu');   
+
+    // image_purple.addEventListener('mouseover',function(){
+    //     this.setAttribute('src','image/m_tape_purple_over.png');
+    // });
+    // image_purple.addEventListener('mouseleave',function(){
+    //     this.setAttribute('src','image/m_tape_purple_default.png');
+    // });
     //まえのやつ
     // const imgG = document.getElementById('tape_g');
 
