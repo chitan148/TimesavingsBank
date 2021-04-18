@@ -55,6 +55,11 @@ h1 {
     font-size: 2rem;
     padding-bottom: 0;
 }
+
+.card-footer{
+    text-align: right;
+}
+
 .deposit_color{
     background: #fceff4;
 }
