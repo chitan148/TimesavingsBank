@@ -24,7 +24,7 @@ class MissionTest extends TestCase
 
     //     $response->assertStatus(200);
     // }
-    //とりあえずこのテスト怖いからコメントアウト
+    //とりあえずこのテスト怖いからコメントアウト//git push heroku masterのテスト
 
     // テストする毎にデータベースをリフレッシュしてマイグレーションを再実行する
     use RefreshDatabase;
